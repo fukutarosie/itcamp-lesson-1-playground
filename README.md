@@ -9,7 +9,7 @@ This project contains hands-on examples and demonstrations covering essential CS
 ## 🚀 Getting Started
 
 1. **Clone or download** this repository to your local machine
-2. **Open `demo-assignment.html`** in your web browser to access the navigation home page
+2. **Open `index.html`** in your web browser to access the navigation home page
 3. **Click on any demo card** to explore different CSS concepts
 
 Alternatively, you can open any individual demo file directly in your browser.
@@ -17,16 +17,24 @@ Alternatively, you can open any individual demo file directly in your browser.
 ## 📁 Project Structure
 
 ```
-interactive-demo/
+css-playground/
 │
-├── demo-assignment.html      # Navigation home page
-├── demo-assignment.css        # Styles for the home page
-├── css-selectors.html         # CSS selector types demo
-├── css-declaration-methods.html  # Inline, internal, and external CSS demo
-├── basic-styling-properties.html # Fundamental CSS properties demo
-├── box-model.html             # CSS box model demonstration
-├── display-and-layout.html    # Display properties and layout techniques
-└── README.md                  # This file
+├── index.html                      # Navigation home page
+├── css-selectors.html              # CSS selector types demo
+├── css-declaration-methods.html    # Inline, internal, and external CSS demo
+├── basic-styling-properties.html   # Fundamental CSS properties demo
+├── box-model.html                  # CSS box model demonstration
+├── display-and-layout.html         # Display properties and layout techniques
+│
+├── styles/                         # Modularized CSS files
+│   ├── home.css                    # Styles for the home page
+│   ├── css-selectors.css           # Styles for CSS selectors demo
+│   ├── css-declaration.css         # Styles for CSS declaration methods demo
+│   ├── basic-styling.css           # Styles for basic styling demo
+│   ├── box-model.css               # Styles for box model demo
+│   └── display-layout.css          # Styles for display and layout demo
+│
+└── README.md                       # This file
 ```
 
 ## 📚 Demo Topics
@@ -88,11 +96,13 @@ By completing these demos, you will:
 
 ## 💻 How to Use
 
-1. **Start with the home page:** Open `demo-assignment.html` to see all available demos
+1. **Start with the home page:** Open `index.html` to see all available demos
 2. **Explore each demo:** Click through the navigation cards to learn different concepts
-3. **View the source code:** Right-click and select "View Page Source" or "Inspect Element" to see the code
-4. **Experiment:** Try modifying the code to see how changes affect the page
-5. **Practice:** Create your own variations of these demos
+3. **Navigate easily:** Use the "← Back to Home" button on each page to return to the main menu
+4. **View the source code:** Right-click and select "View Page Source" or "Inspect Element" to see the code
+5. **Check the CSS:** Look in the `styles/` folder to see the modularized CSS files
+6. **Experiment:** Try modifying the code to see how changes affect the page
+7. **Practice:** Create your own variations of these demos
 
 ## 🛠️ Requirements
 

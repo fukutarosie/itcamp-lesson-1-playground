@@ -4,298 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Declare CSS</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: white;
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .subtitle {
-            text-align: center;
-            color: white;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .methods-grid {
-            display: grid;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .method-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            cursor: pointer;
-            transition: 0.3s;
-            border: 3px solid transparent;
-        }
-
-        .method-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
-        }
-
-        .method-card.active {
-            border-color: #fc466b;
-        }
-
-        .method-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .method-icon {
-            font-size: 3em;
-        }
-
-        .method-title {
-            flex: 1;
-        }
-
-        .method-title h2 {
-            color: #fc466b;
-            font-size: 1.8em;
-            margin-bottom: 5px;
-        }
-
-        .method-subtitle {
-            color: #666;
-            font-size: 1em;
-        }
-
-        .method-rating {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .rating-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            background: #f3f4f6;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-        }
-
-        .rating-item.good {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .rating-item.medium {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        .rating-item.poor {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-
-        .code-example {
-            background: #1e293b;
-            color: #e2e8f0;
-            padding: 20px;
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            line-height: 1.8;
-            overflow-x: auto;
-            margin-bottom: 15px;
-        }
-
-        .code-tag {
-            color: #38bdf8;
-        }
-
-        .code-attr {
-            color: #fbbf24;
-        }
-
-        .code-value {
-            color: #fb923c;
-        }
-
-        .code-property {
-            color: #a78bfa;
-        }
-
-        .code-css-value {
-            color: #4ade80;
-        }
-
-        .code-comment {
-            color: #64748b;
-        }
-
-        .pros-cons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        @media (max-width: 768px) {
-            .pros-cons {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .pros, .cons {
-            background: #f9fafb;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .pros h4 {
-            color: #059669;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .cons h4 {
-            color: #dc2626;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .pros ul, .cons ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .pros li, .cons li {
-            padding: 5px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .pros li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #059669;
-            font-weight: bold;
-        }
-
-        .cons li:before {
-            content: "✗";
-            position: absolute;
-            left: 0;
-            color: #dc2626;
-            font-weight: bold;
-        }
-
-        .comparison-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .comparison-card h3 {
-            color: #3f5efb;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .comparison-table th {
-            background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
-            color: white;
-            font-weight: 600;
-        }
-
-        .comparison-table tr:hover {
-            background: #f9fafb;
-        }
-
-        .check {
-            color: #059669;
-            font-weight: bold;
-        }
-
-        .cross {
-            color: #dc2626;
-            font-weight: bold;
-        }
-
-        .info-box {
-            background: #dbeafe;
-            border-left: 4px solid #3b82f6;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .info-box strong {
-            color: #1e40af;
-            font-size: 1.1em;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .best-practice {
-            background: #d1fae5;
-            border-left: 4px solid #059669;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .best-practice strong {
-            color: #065f46;
-            font-size: 1.1em;
-            display: block;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/css-declaration.css">
 </head>
 <body>
     <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
         <h1>📝 How to Declare CSS</h1>
         <p class="subtitle">Three ways to add styling to your HTML - Click each card to explore!</p>
 
@@ -317,13 +30,13 @@
                 </div>
 
                 <div class="code-example">
-<span class="code-comment">&lt;!-- Inline CSS: style attribute directly in HTML --&gt;</span>
-<span class="code-tag">&lt;h1</span> <span class="code-attr">style</span>=<span class="code-value">"color: blue; font-size: 32px;"</span><span class="code-tag">&gt;</span>
-    Hello World
-<span class="code-tag">&lt;/h1&gt;</span>
+<span class="code-comment">&lt;!-- Inline CSS: style attribute directly in HTML --&gt;</span><br><br>
+<span class="code-tag">&lt;h1</span> <span class="code-attr">style</span>=<span class="code-value">"color: blue; font-size: 32px;"</span><span class="code-tag">&gt;</span><br>
+    Hello World<br>
+<span class="code-tag">&lt;/h1&gt;</span><br><br>
 
-<span class="code-tag">&lt;p</span> <span class="code-attr">style</span>=<span class="code-value">"background-color: yellow; padding: 10px;"</span><span class="code-tag">&gt;</span>
-    This is a paragraph with inline styles.
+<span class="code-tag">&lt;p</span> <span class="code-attr">style</span>=<span class="code-value">"background-color: yellow; padding: 10px;"</span><span class="code-tag">&gt;</span><br>
+    This is a paragraph with inline styles.<br>
 <span class="code-tag">&lt;/p&gt;</span>
                 </div>
 
@@ -365,18 +78,18 @@
                 </div>
 
                 <div class="code-example">
-<span class="code-tag">&lt;head&gt;</span>
-    <span class="code-tag">&lt;style&gt;</span>
-        <span class="code-comment">/* Internal CSS: styles for this page only */</span>
-        <span class="code-property">p</span> {
-            <span class="code-attr">background-color</span>: <span class="code-css-value">yellow</span>;
-            <span class="code-attr">padding</span>: <span class="code-css-value">10px</span>;
-        }
-    <span class="code-tag">&lt;/style&gt;</span>
-<span class="code-tag">&lt;/head&gt;</span>
-<span class="code-tag">&lt;body&gt;</span>
-    <span class="code-tag">&lt;h1&gt;</span>Hello World<span class="code-tag">&lt;/h1&gt;</span>
-    <span class="code-tag">&lt;p&gt;</span>This paragraph uses internal CSS.<span class="code-tag">&lt;/p&gt;</span>
+<span class="code-tag">&lt;head&gt;</span><br>
+    <span class="code-tag">&lt;style&gt;</span><br>
+        <span class="code-comment">/* Internal CSS: styles for this page only */</span><br>
+        <span class="code-property">p</span> {<br>
+            <span class="code-attr">background-color</span>: <span class="code-css-value">yellow</span>;<br>
+            <span class="code-attr">padding</span>: <span class="code-css-value">10px</span>;<br>
+        }<br>
+    <span class="code-tag">&lt;/style&gt;</span><br>
+<span class="code-tag">&lt;/head&gt;</span><br>
+<span class="code-tag">&lt;body&gt;</span><br>
+    <span class="code-tag">&lt;h1&gt;</span>Hello World<span class="code-tag">&lt;/h1&gt;</span><br>
+    <span class="code-tag">&lt;p&gt;</span>This paragraph uses internal CSS.<span class="code-tag">&lt;/p&gt;</span><br>
 <span class="code-tag">&lt;/body&gt;</span>
                 </div>
 
@@ -419,23 +132,23 @@
                 </div>
 
                 <div class="code-example">
-<span class="code-comment">&lt;!-- In your HTML file (index.html) --&gt;</span>
-<span class="code-tag">&lt;head&gt;</span>
-    <span class="code-tag">&lt;link</span> <span class="code-attr">rel</span>=<span class="code-value">"stylesheet"</span> <span class="code-attr">href</span>=<span class="code-value">"styles.css"</span><span class="code-tag">&gt;</span>
+<span class="code-comment">&lt;!-- In your HTML file (index.html) --&gt;</span><br>
+<span class="code-tag">&lt;head&gt;</span><br>
+    <span class="code-tag">&lt;link</span> <span class="code-attr">rel</span>=<span class="code-value">"stylesheet"</span> <span class="code-attr">href</span>=<span class="code-value">"styles.css"</span><span class="code-tag">&gt;</span><br>
 <span class="code-tag">&lt;/head&gt;</span>
                 </div>
 
                 <div class="code-example">
-<span class="code-comment">/* In your CSS file (styles.css) */</span>
-<span class="code-property">h1</span> {
-    <span class="code-attr">color</span>: <span class="code-css-value">blue</span>;
-    <span class="code-attr">font-size</span>: <span class="code-css-value">32px</span>;
-}
+<span class="code-comment">/* In your CSS file (styles.css) */</span><br><br>
+<span class="code-property">h1</span> {<br>
+    <span class="code-attr">color</span>: <span class="code-css-value">blue</span>;<br>
+    <span class="code-attr">font-size</span>: <span class="code-css-value">32px</span>;<br>
+}<br><br>
 
-<span class="code-property">p</span> {
-    <span class="code-attr">background-color</span>: <span class="code-css-value">yellow</span>;
-    <span class="code-attr">padding</span>: <span class="code-css-value">10px</span>;
-}
+<span class="code-property">p</span> {<br>
+    <span class="code-attr">background-color</span>: <span class="code-css-value">yellow</span>;<br>
+    <span class="code-attr">padding</span>: <span class="code-css-value">10px</span>;<br>
+}<br><br>
 
 <span class="code-comment">/* This CSS file can be used on multiple pages! */</span>
                 </div>
@@ -549,9 +262,4 @@
         }
     </script>
 </body>
-</html>h1</span> {
-            <span class="code-attr">color</span>: <span class="code-css-value">blue</span>;
-            <span class="code-attr">font-size</span>: <span class="code-css-value">32px</span>;
-        }
-        
-        <span class="code-property">
+</html>

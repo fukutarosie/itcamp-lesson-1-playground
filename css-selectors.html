@@ -4,261 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Selectors</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: white;
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .subtitle {
-            text-align: center;
-            color: white;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .main-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 968px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .card h3 {
-            color: #0072ff;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-
-        .selector-buttons {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .selector-btn {
-            padding: 15px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            transition: 0.2s;
-            text-align: left;
-        }
-
-        .selector-btn:hover {
-            border-color: #0072ff;
-            background: #eff6ff;
-        }
-
-        .selector-btn.active {
-            border-color: #0072ff;
-            background: #0072ff;
-            color: white;
-        }
-
-        .selector-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
-
-        .selector-syntax {
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-
-        .preview-area {
-            background: #f9fafb;
-            border: 3px dashed #d1d5db;
-            border-radius: 10px;
-            padding: 30px;
-            min-height: 350px;
-        }
-
-        .html-structure {
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            line-height: 1.8;
-            color: #333;
-        }
-
-        .demo-element {
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .demo-element.highlighted {
-            background: #fef08a !important;
-            border-color: #eab308 !important;
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(234, 179, 8, 0.4);
-        }
-
-        .demo-heading {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-
-        .demo-paragraph {
-            background: #f3e8ff;
-            color: #6b21a8;
-        }
-
-        .demo-special {
-            background: #dcfce7;
-            color: #166534;
-        }
-
-        .demo-item {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-
-        .code-display {
-            background: #1e293b;
-            color: #e2e8f0;
-            padding: 20px;
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            line-height: 1.8;
-            overflow-x: auto;
-            margin-top: 20px;
-        }
-
-        .code-selector {
-            color: #fbbf24;
-        }
-
-        .code-property {
-            color: #38bdf8;
-        }
-
-        .code-value {
-            color: #fb923c;
-        }
-
-        .code-comment {
-            color: #64748b;
-        }
-
-        .info-grid {
-            display: grid;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .info-box {
-            background: #f0f9ff;
-            border-left: 4px solid #3b82f6;
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        .info-box strong {
-            color: #1e40af;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .info-box code {
-            background: #dbeafe;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-        }
-
-        .full-width {
-            grid-column: 1 / -1;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .comparison-table th {
-            background: #0072ff;
-            color: white;
-            font-weight: 600;
-        }
-
-        .comparison-table tr:hover {
-            background: #f9fafb;
-        }
-
-        .comparison-table code {
-            background: #f3f4f6;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            color: #0072ff;
-        }
-
-        .highlight-indicator {
-            background: #fef08a;
-            color: #854d0e;
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 15px;
-            border: 2px solid #eab308;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/css-selectors.css">
 </head>
 <body>
     <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
         <h1>🎯 CSS Selectors</h1>
         <p class="subtitle">Learn how to target HTML elements with different selectors!</p>
 
@@ -391,53 +141,53 @@
         const selectorData = {
             element: {
                 code: `<span class="code-comment">/* Element Selector - Targets all elements of that type */</span>
-<span class="code-selector">h1</span> {
-    <span class="code-property">color</span>: <span class="code-value">blue</span>;
+<span class="code-selector">h1</span> {<br>
+    <span class="code-property">color</span>: <span class="code-value">blue</span>; <br>
     <span class="code-property">font-size</span>: <span class="code-value">32px</span>;
-}
+<br>}<br><br>
 
-<span class="code-selector">p</span> {
-    <span class="code-property">color</span>: <span class="code-value">gray</span>;
-    <span class="code-property">line-height</span>: <span class="code-value">1.6</span>;
+<span class="code-selector">p</span> {<br>
+    <span class="code-property">color</span>: <span class="code-value">gray</span>;<br>
+    <span class="code-property">line-height</span>: <span class="code-value">1.6</span>;<br>
 }`,
                 explanation: 'Targets ALL elements of that HTML tag type. If you style <code>p</code>, it affects every paragraph!',
                 highlight: 'yellow'
             },
             class: {
-                code: `<span class="code-comment">/* Class Selector - Targets elements with that class */</span>
-<span class="code-selector">.special</span> {
-    <span class="code-property">background-color</span>: <span class="code-value">#dcfce7</span>;
-    <span class="code-property">padding</span>: <span class="code-value">15px</span>;
-    <span class="code-property">border-radius</span>: <span class="code-value">8px</span>;
-}
+                code: `<span class="code-comment">/* Class Selector - Targets elements with that class */</span><br>
+<span class="code-selector">.special</span> {<br>
+    <span class="code-property">background-color</span>: <span class="code-value">#dcfce7</span>;<br>
+    <span class="code-property">padding</span>: <span class="code-value">15px</span>;<br>
+    <span class="code-property">border-radius</span>: <span class="code-value">8px</span>;<br>
+}<br>
 
-<span class="code-comment">/* Multiple elements can have the same class */</span>
+<span class="code-comment">/* Multiple elements can have the same class */</span><br>
 <span class="code-comment">/* &lt;div class="special"&gt; */</span>`,
                 explanation: 'Targets ALL elements with that class name. Classes are reusable! Use the dot <code>.</code> before the class name.',
                 highlight: 'green'
             },
             id: {
-                code: `<span class="code-comment">/* ID Selector - Targets ONE unique element */</span>
-<span class="code-selector">#unique</span> {
-    <span class="code-property">background-color</span>: <span class="code-value">#fee2e2</span>;
-    <span class="code-property">font-weight</span>: <span class="code-value">bold</span>;
-    <span class="code-property">border</span>: <span class="code-value">2px solid red</span>;
-}
+                code: `<span class="code-comment">/* ID Selector - Targets ONE unique element */</span><br>
+<span class="code-selector">#unique</span> {<br>
+    <span class="code-property">background-color</span>: <span class="code-value">#fee2e2</span>;<br>
+    <span class="code-property">font-weight</span>: <span class="code-value">bold</span>;<br>
+    <span class="code-property">border</span>: <span class="code-value">2px solid red</span>;<br>
+<br>}<br>
 
-<span class="code-comment">/* Only ONE element should have this ID */</span>
+<span class="code-comment">/* Only ONE element should have this ID */</span><br>
 <span class="code-comment">/* &lt;div id="unique"&gt; */</span>`,
                 explanation: 'Targets ONE specific element with that ID. IDs must be unique! Use the hash <code>#</code> before the ID name.',
                 highlight: 'red'
             },
             universal: {
                 code: `<span class="code-comment">/* Universal Selector - Targets EVERYTHING */</span>
-<span class="code-selector">*</span> {
-    <span class="code-property">margin</span>: <span class="code-value">0</span>;
-    <span class="code-property">padding</span>: <span class="code-value">0</span>;
-    <span class="code-property">box-sizing</span>: <span class="code-value">border-box</span>;
-}
+<span class="code-selector">*</span> {<br>
+    <span class="code-property">margin</span>: <span class="code-value">0</span>;<br>
+    <span class="code-property">padding</span>: <span class="code-value">0</span>;<br>
+    <span class="code-property">box-sizing</span>: <span class="code-value">border-box</span>;<br>
+<br>}<br>
 
-<span class="code-comment">/* Applies to every single element */</span>
+<span class="code-comment">/* Applies to every single element */</span><br>
 <span class="code-comment">/* Often used for CSS resets */</span>`,
                 explanation: 'Targets EVERY element on the page. Use carefully! Often used at the start of CSS files to reset default browser styles.',
                 highlight: 'all'
