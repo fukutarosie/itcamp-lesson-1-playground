@@ -106,25 +106,16 @@ h1.page-title {
     background: white;
 }
 
-.portfolio-content header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 60px 40px;
-    text-align: center;
-}
-
 .portfolio-content h1 {
     font-size: 48px;
     margin-bottom: 10px;
 }
 
-.portfolio-content header p {
-    font-size: 24px;
-    opacity: 0.95;
-}
-
-.portfolio-content section {
-    padding: 60px 40px;
+.portfolio-content header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 40px; /* increased from 60px */
+    text-align: center;
 }
 
 .portfolio-content section.about {
@@ -207,7 +198,7 @@ h1.page-title {
 }
 
 .annotation-text {
-    color: #7f8c8d;
+    color: rgba(255,255,255,0.95); /* improved contrast for annotations */
     font-size: 14px;
     line-height: 1.6;
 }
@@ -445,18 +436,24 @@ h1.page-title {
     outline: 3px solid #3498db;
     outline-offset: 2px;
     animation: pulse 2s ease-in-out infinite;
+    /* make highlighted element text visible against darker outlines */
+    color: white;
 }
 
 .class-highlight {
     outline: 3px solid #2ecc71;
     outline-offset: 2px;
     animation: pulse 2s ease-in-out infinite;
+    /* white text for class highlights */
+    color: white;
 }
 
 .id-highlight {
     outline: 3px solid #e74c3c;
     outline-offset: 2px;
     animation: pulse 2s ease-in-out infinite;
+    /* white text for id highlights */
+    color: white;
 }
 
 @keyframes pulse {
@@ -475,6 +472,19 @@ h1.page-title {
     justify-content: center;
     margin: 20px 0;
     flex-wrap: wrap;
+}
+
+/* Adjust spacing for the portfolio preview panel title and rendered content */
+.panel.portfolio-preview h2 {
+    /* leave the blue border, but add more space below so it doesn't collide visually */
+    padding-top: 18px;
+    padding-bottom: 16px;
+    margin-bottom: 18px; /* extra breathing room for the blue line */
+}
+
+/* Increase top padding in the rendered portfolio header so large fonts have more space */
+.portfolio-content header {
+    padding: 80px 40px; /* increased from 60px */
 }
 
 .toggle-btn {
