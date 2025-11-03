@@ -4,358 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Specificity Playground - Battle Royale</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 40px 20px;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            transition: transform 0.2s;
-        }
-
-        .back-button:hover {
-            transform: translateX(-5px);
-        }
-
-        h1 {
-            color: #667eea;
-            text-align: center;
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 1.3em;
-            margin-bottom: 30px;
-        }
-
-        .info-box {
-            background: #e3f2fd;
-            border-left: 5px solid #2196f3;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        .info-box h3 {
-            color: #1976d2;
-            margin-bottom: 10px;
-        }
-
-        .info-box ul {
-            margin-left: 20px;
-        }
-
-        .info-box li {
-            margin: 8px 0;
-            color: #555;
-        }
-
-        /* Battle Arena */
-        .battle-arena {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .battle-arena::before {
-            content: "⚔️ SPECIFICITY BATTLE ARENA ⚔️";
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 24px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .scenario-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 60px 0 30px 0;
-        }
-
-        .scenario-btn {
-            background: white;
-            border: none;
-            padding: 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .scenario-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .scenario-btn.active {
-            background: #4caf50;
-            color: white;
-        }
-
-        /* Battle Display */
-        .battle-display {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .fighters-section {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .fighters-section h2 {
-            color: #1e3c72;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .fighter-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border: 3px solid transparent;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .fighter-card.winner {
-            border-color: #4caf50;
-            background: linear-gradient(135deg, #a8e6cf 0%, #4caf50 100%);
-            box-shadow: 0 0 30px rgba(76, 175, 80, 0.5);
-            transform: scale(1.05);
-        }
-
-        .fighter-card.loser {
-            opacity: 0.5;
-            transform: scale(0.95);
-        }
-
-        .fighter-selector {
-            font-family: 'Courier New', monospace;
-            font-size: 18px;
-            font-weight: bold;
-            color: #1e3c72;
-            margin-bottom: 10px;
-        }
-
-        .fighter-properties {
-            font-family: 'Courier New', monospace;
-            color: #666;
-            margin-bottom: 15px;
-            padding-left: 20px;
-        }
-
-        .specificity-score {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .score-box {
-            background: white;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-            border: 2px solid #ddd;
-        }
-
-        .score-number {
-            font-size: 28px;
-            font-weight: bold;
-            color: #1e3c72;
-        }
-
-        .score-label {
-            font-size: 11px;
-            color: #666;
-            margin-top: 5px;
-        }
-
-        .winner-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #4caf50;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            animation: pulse 1s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        /* Result Display */
-        .result-section {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .result-section h2 {
-            color: #1e3c72;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .target-element {
-            background: #f9f9f9;
-            border: 3px dashed #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 20px;
-            transition: all 0.5s;
-        }
-
-        .target-element.active {
-            border-color: #4caf50;
-            box-shadow: 0 0 30px rgba(76, 175, 80, 0.3);
-        }
-
-        .element-display {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .element-code {
-            font-family: 'Courier New', monospace;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .final-style {
-            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 18px;
-        }
-
-        .explanation-box {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .explanation-box h3 {
-            color: #856404;
-            margin-bottom: 10px;
-        }
-
-        .explanation-box p {
-            color: #856404;
-            line-height: 1.6;
-        }
-
-        /* How it Works Section */
-        .how-it-works {
-            background: #f5f5f5;
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 30px;
-        }
-
-        .how-it-works h2 {
-            color: #1e3c72;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .specificity-table {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: 20px;
-        }
-
-        .specificity-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .specificity-table th {
-            background: #1e3c72;
-            color: white;
-            padding: 15px;
-            text-align: left;
-        }
-
-        .specificity-table td {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .specificity-table tr:hover {
-            background: #f5f5f5;
-        }
-
-        .code-example {
-            font-family: 'Courier New', monospace;
-            background: #f5f5f5;
-            padding: 3px 8px;
-            border-radius: 4px;
-            color: #d63384;
-        }
-
-        .waiting-message {
-            text-align: center;
-            color: #999;
-            font-style: italic;
-            padding: 40px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/css-specificity.css">
 </head>
 <body>
     <div class="container">
@@ -452,6 +101,153 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <!-- Live HTML Code Demo Section -->
+        <div class="live-demo-section">
+            <h2>💻 See Specificity in Action with Real HTML</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #666; line-height: 1.8;">
+                Here's the actual HTML and CSS code for each scenario, and how it renders!
+            </p>
+
+            <div class="demo-grid">
+                <!-- Demo 1: Element vs Class -->
+                <div class="demo-card">
+                    <h3>🥊 Example 1: Element vs Class</h3>
+                    
+                    <div class="html-code-block">
+<span class="html-comment">&lt;!-- HTML Code --&gt;</span>
+<span class="html-tag">&lt;button</span> <span class="html-attr">class</span>=<span class="html-value">"primary-btn"</span><span class="html-tag">&gt;</span>
+    <span class="html-text">Click Me</span>
+<span class="html-tag">&lt;/button&gt;</span>
+                    </div>
+
+                    <div class="css-code-block">
+<span class="css-comment">/* CSS Rules */</span>
+<span class="css-selector">button</span> {
+    <span class="css-property">color</span>: <span class="css-value">blue</span>;
+    <span class="css-property">background</span>: <span class="css-value">gray</span>;
+}  <span class="css-comment">/* Specificity: 0,0,0,1 */</span>
+
+<span class="css-selector">.primary-btn</span> {
+    <span class="css-property">color</span>: <span class="css-value">white</span>;
+    <span class="css-property">background</span>: <span class="css-value">green</span>;
+}  <span class="css-comment">/* Specificity: 0,0,1,0 - WINS! */</span>
+                    </div>
+
+                    <div class="visual-output-label">📺 Visual Output:</div>
+                    <div class="visual-output">
+                        <button class="demo-button primary-btn" style="color: white; background: green;">Click Me</button>
+                    </div>
+
+                    <div class="specificity-indicator">
+                        <strong>Winner:</strong> .primary-btn (0,0,1,0) beats button (0,0,0,1)
+                    </div>
+                </div>
+
+                <!-- Demo 2: Class vs ID -->
+                <div class="demo-card">
+                    <h3>🥊 Example 2: Class vs ID</h3>
+                    
+                    <div class="html-code-block">
+<span class="html-comment">&lt;!-- HTML Code --&gt;</span>
+<span class="html-tag">&lt;h1</span> <span class="html-attr">id</span>=<span class="html-value">"main-title"</span> 
+    <span class="html-attr">class</span>=<span class="html-value">"header-text"</span><span class="html-tag">&gt;</span>
+    <span class="html-text">Welcome</span>
+<span class="html-tag">&lt;/h1&gt;</span>
+                    </div>
+
+                    <div class="css-code-block">
+<span class="css-comment">/* CSS Rules */</span>
+<span class="css-selector">.header-text</span> {
+    <span class="css-property">color</span>: <span class="css-value">blue</span>;
+    <span class="css-property">font-size</span>: <span class="css-value">20px</span>;
+}  <span class="css-comment">/* Specificity: 0,0,1,0 */</span>
+
+<span class="css-selector">#main-title</span> {
+    <span class="css-property">color</span>: <span class="css-value">purple</span>;
+    <span class="css-property">font-size</span>: <span class="css-value">32px</span>;
+}  <span class="css-comment">/* Specificity: 0,1,0,0 - WINS! */</span>
+                    </div>
+
+                    <div class="visual-output-label">📺 Visual Output:</div>
+                    <div class="visual-output">
+                        <h1 class="demo-heading" id="main-title" style="color: purple; font-size: 32px;">Welcome</h1>
+                    </div>
+
+                    <div class="specificity-indicator">
+                        <strong>Winner:</strong> #main-title (0,1,0,0) beats .header-text (0,0,1,0)
+                    </div>
+                </div>
+
+                <!-- Demo 3: Multiple Classes -->
+                <div class="demo-card">
+                    <h3>🥊 Example 3: Multiple Classes</h3>
+                    
+                    <div class="html-code-block">
+<span class="html-comment">&lt;!-- HTML Code --&gt;</span>
+<span class="html-tag">&lt;div</span> <span class="html-attr">class</span>=<span class="html-value">"card featured"</span><span class="html-tag">&gt;</span>
+    <span class="html-text">Featured Item</span>
+<span class="html-tag">&lt;/div&gt;</span>
+                    </div>
+
+                    <div class="css-code-block">
+<span class="css-comment">/* CSS Rules */</span>
+<span class="css-selector">.card</span> {
+    <span class="css-property">background</span>: <span class="css-value">white</span>;
+    <span class="css-property">border</span>: <span class="css-value">1px solid gray</span>;
+}  <span class="css-comment">/* Specificity: 0,0,1,0 */</span>
+
+<span class="css-selector">.card.featured</span> {
+    <span class="css-property">background</span>: <span class="css-value">gold</span>;
+    <span class="css-property">border</span>: <span class="css-value">3px solid orange</span>;
+}  <span class="css-comment">/* Specificity: 0,0,2,0 - WINS! */</span>
+                    </div>
+
+                    <div class="visual-output-label">📺 Visual Output:</div>
+                    <div class="visual-output">
+                        <div class="demo-card-element" style="background: gold; border: 3px solid orange; padding: 20px;">Featured Item</div>
+                    </div>
+
+                    <div class="specificity-indicator">
+                        <strong>Winner:</strong> .card.featured (0,0,2,0) beats .card (0,0,1,0)
+                    </div>
+                </div>
+
+                <!-- Demo 4: ID vs Inline Style -->
+                <div class="demo-card">
+                    <h3>🥊 Example 4: ID vs Inline Style</h3>
+                    
+                    <div class="html-code-block">
+<span class="html-comment">&lt;!-- HTML Code --&gt;</span>
+<span class="html-tag">&lt;p</span> <span class="html-attr">id</span>=<span class="html-value">"special-text"</span>
+   <span class="html-attr">style</span>=<span class="html-value">"color: red;"</span><span class="html-tag">&gt;</span>
+    <span class="html-text">Important Text</span>
+<span class="html-tag">&lt;/p&gt;</span>
+                    </div>
+
+                    <div class="css-code-block">
+<span class="css-comment">/* CSS Rules */</span>
+<span class="css-selector">#special-text</span> {
+    <span class="css-property">color</span>: <span class="css-value">blue</span>;
+    <span class="css-property">font-weight</span>: <span class="css-value">bold</span>;
+}  <span class="css-comment">/* Specificity: 0,1,0,0 */</span>
+
+<span class="css-comment">/* Inline style attribute */</span>
+<span class="css-selector">style="color: red;"</span>
+<span class="css-comment">/* Specificity: 1,0,0,0 - WINS! */</span>
+                    </div>
+
+                    <div class="visual-output-label">📺 Visual Output:</div>
+                    <div class="visual-output">
+                        <p class="demo-text" style="color: red; font-weight: bold; font-size: 18px;">Important Text</p>
+                    </div>
+
+                    <div class="specificity-indicator">
+                        <strong>Winner:</strong> Inline style (1,0,0,0) beats #special-text (0,1,0,0)
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -607,22 +403,6 @@
 
             document.getElementById('battleContent').innerHTML = battleHTML;
         }
-
-        // CSS animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
