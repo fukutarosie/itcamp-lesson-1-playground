@@ -18,12 +18,13 @@
             <p class="subtitle">Learn how CSS selectors filter and style your HTML elements!</p>
 
             <div class="info-box">
-                <h3>🎯 Understanding the Connection</h3>
+                <h3>🎯 How to Use This Playground</h3>
                 <ul>
-                    <li><strong>Filter Funnel:</strong> Shows how selectors filter HTML elements</li>
-                    <li><strong>Code Panel:</strong> The HTML source code you write</li>
-                    <li><strong>UI Panel:</strong> How the browser renders it visually</li>
-                    <li>Click the buttons below to see all three update simultaneously!</li>
+                    <li><strong>Step 1:</strong> Click any selector button below (Element, Class, ID, or Universal)</li>
+                    <li><strong>Step 2:</strong> Watch the <strong>Filter Funnel</strong> show which HTML elements match</li>
+                    <li><strong>Step 3:</strong> See the matched elements highlighted in the <strong>📝 HTML Code</strong> panel</li>
+                    <li><strong>Step 4:</strong> View how they appear in the <strong>🖼️ Visual Output</strong> (browser rendering)</li>
+                    <li><strong>💡 Tip:</strong> All three sections update simultaneously to show you the complete picture!</li>
                 </ul>
             </div>
 
@@ -38,6 +39,9 @@
             <!-- FILTER FUNNEL VISUALIZATION -->
             <div class="filter-section">
                 <h2 style="color: rgb(21, 21, 21); text-align: center; margin-bottom: 20px;">🔍 The Filter System in Action</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 15px;">
+                    <strong>👇 Start here:</strong> This funnel shows how CSS selectors filter through all HTML elements on your page
+                </p>
                 <div class="filter-flow">
                     <div class="filter-stage">
                         <div class="stage-label">📄 HTML Elements</div>
@@ -95,9 +99,17 @@
                 <h2 style="color: white; font-size: 36px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
                     📄 Source Code & Browser Rendering
                 </h2>
-                <p style="color: rgba(255,255,255,0.9); font-size: 18px;">
+                <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin-bottom: 10px;">
                     See the connection between HTML code and visual output!
                 </p>
+                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 10px; max-width: 800px; margin: 0 auto; backdrop-filter: blur(10px);">
+                    <p style="color: white; font-size: 16px; margin: 0; line-height: 1.6;">
+                        <strong>📌 How to read this section:</strong><br>
+                        <strong>Left (📝 HTML Code):</strong> This is what you write - the source HTML with all elements<br>
+                        <strong>Right (🖼️ Visual Output):</strong> This is what users see - how the browser renders your HTML<br>
+                        <strong>Highlighted elements:</strong> Show which parts are selected by your chosen CSS selector
+                    </p>
+                </div>
             </div>
 
             <div class="comparison-layout">
