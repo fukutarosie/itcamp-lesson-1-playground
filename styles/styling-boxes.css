@@ -1,0 +1,438 @@
+/* Styling Boxes Playground Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.playground-header {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.playground-header h1 {
+    font-size: 2.5em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.playground-header p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #764ba2;
+}
+
+.playground-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Instructions Section */
+.instructions {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.info-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.info-box p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Split Layout */
+.playground-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 1200px) {
+    .playground-split {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Controls Section */
+.controls-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    max-height: 800px;
+    overflow-y: auto;
+}
+
+.controls-section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.control-group {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.control-group:last-child {
+    border-bottom: none;
+}
+
+.control-group h3 {
+    color: #764ba2;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.control-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.control-item label {
+    flex: 0 0 140px;
+    font-weight: 600;
+    color: #555;
+}
+
+.control-item input[type="range"] {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+    background: linear-gradient(to right, #667eea, #764ba2);
+}
+
+.control-item input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #667eea;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.control-item input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.control-item input[type="color"] {
+    width: 60px;
+    height: 40px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.control-item select {
+    flex: 1;
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    background: white;
+    cursor: pointer;
+}
+
+.value-display {
+    flex: 0 0 80px;
+    text-align: right;
+    font-weight: bold;
+    color: #667eea;
+    font-family: 'Courier New', monospace;
+}
+
+.toggle-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.toggle-btn:hover {
+    background: #e0e0e0;
+    border-color: #667eea;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Preview Section */
+.preview-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.preview-section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.preview-container {
+    background: #f8f9fa;
+    padding: 60px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px dashed #ddd;
+}
+
+.margin-indicator {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 193, 7, 0.2);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    color: #666;
+    border: 1px dashed #ffc107;
+}
+
+.styled-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.box-content {
+    text-align: center;
+}
+
+.box-content h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.box-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* CSS Output */
+.css-output {
+    background: #282c34;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.css-output h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.css-output pre {
+    margin: 0;
+    overflow-x: auto;
+}
+
+.css-output code {
+    color: #61dafb;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+    line-height: 1.6;
+    display: block;
+    white-space: pre;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 15px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s;
+}
+
+.copy-btn:hover {
+    background: #764ba2;
+}
+
+/* Presets */
+.presets {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.presets h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.preset-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.preset-btn {
+    padding: 12px;
+    background: white;
+    border: 2px solid #667eea;
+    color: #667eea;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.preset-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Explanation Section */
+.explanation {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.explanation h2 {
+    color: #667eea;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.property-explanation {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #667eea;
+}
+
+.property-explanation:last-child {
+    margin-bottom: 0;
+}
+
+.property-explanation h3 {
+    color: #764ba2;
+    margin-bottom: 10px;
+}
+
+.property-explanation p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.property-explanation p:last-child {
+    margin-bottom: 0;
+}
+
+.property-explanation code {
+    background: #282c34;
+    color: #61dafb;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Scrollbar Styling */
+.controls-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.controls-section::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.controls-section::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+.controls-section::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}

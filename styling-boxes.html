@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Boxes - CSS Playground</title>
+    <link rel="stylesheet" href="styles/styling-boxes.css">
+</head>
+<body>
+    <header class="playground-header">
+        <h1>🎨 Styling Boxes Playground</h1>
+        <p>Experiment with padding, borders, margins, border-radius, and box-shadow!</p>
+        <a href="index.html" class="back-button">← Back to Home</a>
+    </header>
+
+    <main class="playground-container">
+        <!-- Instructions Section -->
+        <section class="instructions">
+            <h2>📖 How to Use This Playground</h2>
+            <div class="info-box">
+                <p><strong>Step 1:</strong> Adjust the sliders below to change box styling properties</p>
+                <p><strong>Step 2:</strong> Watch the live preview box update in real-time</p>
+                <p><strong>Step 3:</strong> See the generated CSS code that creates the effect</p>
+                <p><strong>Step 4:</strong> Click preset buttons to see common styling patterns</p>
+            </div>
+        </section>
+
+        <!-- Control Panel and Preview -->
+        <div class="playground-split">
+            <!-- Left Side: Controls -->
+            <section class="controls-section">
+                <h2>🎛️ Box Styling Controls</h2>
+
+                <!-- Padding Controls -->
+                <div class="control-group">
+                    <h3>📦 Padding (Inside Spacing)</h3>
+                    <div class="control-item">
+                        <label for="padding-all">All Sides:</label>
+                        <input type="range" id="padding-all" min="0" max="60" value="20" step="5">
+                        <span class="value-display" id="padding-value">20px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="padding-top">Top:</label>
+                        <input type="range" id="padding-top" min="0" max="60" value="20" step="5">
+                        <span class="value-display" id="padding-top-value">20px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="padding-right">Right:</label>
+                        <input type="range" id="padding-right" min="0" max="60" value="20" step="5">
+                        <span class="value-display" id="padding-right-value">20px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="padding-bottom">Bottom:</label>
+                        <input type="range" id="padding-bottom" min="0" max="60" value="20" step="5">
+                        <span class="value-display" id="padding-bottom-value">20px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="padding-left">Left:</label>
+                        <input type="range" id="padding-left" min="0" max="60" value="20" step="5">
+                        <span class="value-display" id="padding-left-value">20px</span>
+                    </div>
+                    <button class="toggle-btn" id="toggle-padding">Toggle Individual Sides</button>
+                </div>
+
+                <!-- Border Controls -->
+                <div class="control-group">
+                    <h3>🎀 Border</h3>
+                    <div class="control-item">
+                        <label for="border-width">Width:</label>
+                        <input type="range" id="border-width" min="0" max="20" value="2" step="1">
+                        <span class="value-display" id="border-width-value">2px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="border-style">Style:</label>
+                        <select id="border-style">
+                            <option value="solid">Solid</option>
+                            <option value="dashed">Dashed</option>
+                            <option value="dotted">Dotted</option>
+                            <option value="double">Double</option>
+                            <option value="groove">Groove</option>
+                            <option value="ridge">Ridge</option>
+                            <option value="inset">Inset</option>
+                            <option value="outset">Outset</option>
+                        </select>
+                    </div>
+                    <div class="control-item">
+                        <label for="border-color">Color:</label>
+                        <input type="color" id="border-color" value="#3498db">
+                        <span class="value-display" id="border-color-value">#3498db</span>
+                    </div>
+                </div>
+
+                <!-- Margin Controls -->
+                <div class="control-group">
+                    <h3>📏 Margin (Outside Spacing)</h3>
+                    <div class="control-item">
+                        <label for="margin-all">All Sides:</label>
+                        <input type="range" id="margin-all" min="0" max="60" value="20" step="5">
+                        <span class="value-display" id="margin-value">20px</span>
+                    </div>
+                    <button class="toggle-btn" id="toggle-margin">Toggle Individual Sides</button>
+                    <div id="margin-individual" style="display: none;">
+                        <div class="control-item">
+                            <label for="margin-top">Top:</label>
+                            <input type="range" id="margin-top" min="0" max="60" value="20" step="5">
+                            <span class="value-display" id="margin-top-value">20px</span>
+                        </div>
+                        <div class="control-item">
+                            <label for="margin-right">Right:</label>
+                            <input type="range" id="margin-right" min="0" max="60" value="20" step="5">
+                            <span class="value-display" id="margin-right-value">20px</span>
+                        </div>
+                        <div class="control-item">
+                            <label for="margin-bottom">Bottom:</label>
+                            <input type="range" id="margin-bottom" min="0" max="60" value="20" step="5">
+                            <span class="value-display" id="margin-bottom-value">20px</span>
+                        </div>
+                        <div class="control-item">
+                            <label for="margin-left">Left:</label>
+                            <input type="range" id="margin-left" min="0" max="60" value="20" step="5">
+                            <span class="value-display" id="margin-left-value">20px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Border Radius Controls -->
+                <div class="control-group">
+                    <h3>⭕ Border Radius (Rounded Corners)</h3>
+                    <div class="control-item">
+                        <label for="border-radius-all">All Corners:</label>
+                        <input type="range" id="border-radius-all" min="0" max="50" value="8" step="1">
+                        <span class="value-display" id="border-radius-value">8px</span>
+                    </div>
+                    <button class="toggle-btn" id="toggle-radius">Toggle Individual Corners</button>
+                    <div id="radius-individual" style="display: none;">
+                        <div class="control-item">
+                            <label for="radius-top-left">Top Left:</label>
+                            <input type="range" id="radius-top-left" min="0" max="50" value="8" step="1">
+                            <span class="value-display" id="radius-top-left-value">8px</span>
+                        </div>
+                        <div class="control-item">
+                            <label for="radius-top-right">Top Right:</label>
+                            <input type="range" id="radius-top-right" min="0" max="50" value="8" step="1">
+                            <span class="value-display" id="radius-top-right-value">8px</span>
+                        </div>
+                        <div class="control-item">
+                            <label for="radius-bottom-right">Bottom Right:</label>
+                            <input type="range" id="radius-bottom-right" min="0" max="50" value="8" step="1">
+                            <span class="value-display" id="radius-bottom-right-value">8px</span>
+                        </div>
+                        <div class="control-item">
+                            <label for="radius-bottom-left">Bottom Left:</label>
+                            <input type="range" id="radius-bottom-left" min="0" max="50" value="8" step="1">
+                            <span class="value-display" id="radius-bottom-left-value">8px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Box Shadow Controls -->
+                <div class="control-group">
+                    <h3>🌑 Box Shadow</h3>
+                    <div class="control-item">
+                        <label for="shadow-x">Horizontal Offset:</label>
+                        <input type="range" id="shadow-x" min="-20" max="20" value="0" step="1">
+                        <span class="value-display" id="shadow-x-value">0px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="shadow-y">Vertical Offset:</label>
+                        <input type="range" id="shadow-y" min="-20" max="20" value="4" step="1">
+                        <span class="value-display" id="shadow-y-value">4px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="shadow-blur">Blur Radius:</label>
+                        <input type="range" id="shadow-blur" min="0" max="40" value="8" step="1">
+                        <span class="value-display" id="shadow-blur-value">8px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="shadow-spread">Spread:</label>
+                        <input type="range" id="shadow-spread" min="-20" max="20" value="0" step="1">
+                        <span class="value-display" id="shadow-spread-value">0px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="shadow-color">Color:</label>
+                        <input type="color" id="shadow-color" value="#000000">
+                        <span class="value-display" id="shadow-color-value">#000000</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="shadow-opacity">Opacity:</label>
+                        <input type="range" id="shadow-opacity" min="0" max="100" value="20" step="5">
+                        <span class="value-display" id="shadow-opacity-value">0.2</span>
+                    </div>
+                </div>
+
+                <!-- Background and Size -->
+                <div class="control-group">
+                    <h3>🎨 Additional Styling</h3>
+                    <div class="control-item">
+                        <label for="bg-color">Background Color:</label>
+                        <input type="color" id="bg-color" value="#f0f8ff">
+                        <span class="value-display" id="bg-color-value">#f0f8ff</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="box-width">Box Width:</label>
+                        <input type="range" id="box-width" min="200" max="400" value="300" step="10">
+                        <span class="value-display" id="box-width-value">300px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="box-height">Box Height:</label>
+                        <input type="range" id="box-height" min="100" max="300" value="150" step="10">
+                        <span class="value-display" id="box-height-value">150px</span>
+                    </div>
+                </div>
+
+                <!-- Reset Button -->
+                <button class="reset-btn" id="reset-all">🔄 Reset All</button>
+            </section>
+
+            <!-- Right Side: Preview -->
+            <section class="preview-section">
+                <h2>👁️ Live Preview</h2>
+                
+                <!-- Preview Container with Margin Visualization -->
+                <div class="preview-container" id="preview-container">
+                    <div class="margin-indicator">Margin (transparent space)</div>
+                    <div class="styled-box" id="styled-box">
+                        <div class="box-content">
+                            <h3>Styled Box</h3>
+                            <p>This box updates in real-time as you adjust the controls!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generated CSS Code -->
+                <div class="css-output">
+                    <h3>📝 Generated CSS Code</h3>
+                    <pre><code id="css-code">.styled-box {
+  width: 300px;
+  height: 150px;
+  background-color: #f0f8ff;
+  
+  padding: 20px;
+  border: 2px solid #3498db;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}</code></pre>
+                    <button class="copy-btn" id="copy-css">📋 Copy CSS</button>
+                </div>
+
+                <!-- Preset Styles -->
+                <div class="presets">
+                    <h3>✨ Quick Presets</h3>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" data-preset="card">Card</button>
+                        <button class="preset-btn" data-preset="button">Button</button>
+                        <button class="preset-btn" data-preset="elevated">Elevated</button>
+                        <button class="preset-btn" data-preset="flat">Flat</button>
+                        <button class="preset-btn" data-preset="rounded">Pill Shape</button>
+                        <button class="preset-btn" data-preset="sharp">Sharp</button>
+                        <button class="preset-btn" data-preset="glow">Glow Effect</button>
+                        <button class="preset-btn" data-preset="inset">Inset Shadow</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Explanation Section -->
+        <section class="explanation">
+            <h2>📚 Understanding Box Styling Properties</h2>
+            
+            <div class="property-explanation">
+                <h3>📦 Padding</h3>
+                <p><strong>What it does:</strong> Creates space INSIDE the box, between content and border.</p>
+                <p><strong>When to use:</strong> Give content breathing room, make buttons/cards more comfortable.</p>
+                <p><strong>Example:</strong> <code>padding: 20px;</code> or <code>padding: 10px 20px;</code> (top/bottom left/right)</p>
+            </div>
+
+            <div class="property-explanation">
+                <h3>🎀 Border</h3>
+                <p><strong>What it does:</strong> Creates a visible edge around the box.</p>
+                <p><strong>When to use:</strong> Define boundaries, create separation, add visual interest.</p>
+                <p><strong>Example:</strong> <code>border: 2px solid #3498db;</code> (width style color)</p>
+            </div>
+
+            <div class="property-explanation">
+                <h3>📏 Margin</h3>
+                <p><strong>What it does:</strong> Creates space OUTSIDE the box, between this element and others.</p>
+                <p><strong>When to use:</strong> Separate elements, create whitespace, control layout spacing.</p>
+                <p><strong>Example:</strong> <code>margin: 20px;</code> or <code>margin: 0 auto;</code> (center horizontally)</p>
+            </div>
+
+            <div class="property-explanation">
+                <h3>⭕ Border Radius</h3>
+                <p><strong>What it does:</strong> Rounds the corners of the box.</p>
+                <p><strong>When to use:</strong> Modern look, soften sharp edges, create circles/pills.</p>
+                <p><strong>Example:</strong> <code>border-radius: 8px;</code> or <code>border-radius: 50%;</code> (circle)</p>
+            </div>
+
+            <div class="property-explanation">
+                <h3>🌑 Box Shadow</h3>
+                <p><strong>What it does:</strong> Adds shadow effects to create depth and elevation.</p>
+                <p><strong>When to use:</strong> Make elements appear floating, create hierarchy, add visual interest.</p>
+                <p><strong>Example:</strong> <code>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</code> (x y blur spread color)</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Get all controls
+        const controls = {
+            paddingAll: document.getElementById('padding-all'),
+            paddingTop: document.getElementById('padding-top'),
+            paddingRight: document.getElementById('padding-right'),
+            paddingBottom: document.getElementById('padding-bottom'),
+            paddingLeft: document.getElementById('padding-left'),
+            marginAll: document.getElementById('margin-all'),
+            marginTop: document.getElementById('margin-top'),
+            marginRight: document.getElementById('margin-right'),
+            marginBottom: document.getElementById('margin-bottom'),
+            marginLeft: document.getElementById('margin-left'),
+            borderWidth: document.getElementById('border-width'),
+            borderStyle: document.getElementById('border-style'),
+            borderColor: document.getElementById('border-color'),
+            borderRadiusAll: document.getElementById('border-radius-all'),
+            radiusTopLeft: document.getElementById('radius-top-left'),
+            radiusTopRight: document.getElementById('radius-top-right'),
+            radiusBottomRight: document.getElementById('radius-bottom-right'),
+            radiusBottomLeft: document.getElementById('radius-bottom-left'),
+            shadowX: document.getElementById('shadow-x'),
+            shadowY: document.getElementById('shadow-y'),
+            shadowBlur: document.getElementById('shadow-blur'),
+            shadowSpread: document.getElementById('shadow-spread'),
+            shadowColor: document.getElementById('shadow-color'),
+            shadowOpacity: document.getElementById('shadow-opacity'),
+            bgColor: document.getElementById('bg-color'),
+            boxWidth: document.getElementById('box-width'),
+            boxHeight: document.getElementById('box-height')
+        };
+
+        const styledBox = document.getElementById('styled-box');
+        const previewContainer = document.getElementById('preview-container');
+        const cssCode = document.getElementById('css-code');
+
+        // Track individual control state
+        let useIndividualPadding = false;
+        let useIndividualMargin = false;
+        let useIndividualRadius = false;
+
+        // Toggle buttons
+        document.getElementById('toggle-padding').addEventListener('click', () => {
+            useIndividualPadding = !useIndividualPadding;
+            const individualControls = document.querySelectorAll('#padding-top, #padding-right, #padding-bottom, #padding-left');
+            individualControls.forEach(ctrl => {
+                ctrl.parentElement.style.display = useIndividualPadding ? 'flex' : 'none';
+            });
+            controls.paddingAll.parentElement.style.display = useIndividualPadding ? 'none' : 'flex';
+            updateBox();
+        });
+
+        document.getElementById('toggle-margin').addEventListener('click', () => {
+            useIndividualMargin = !useIndividualMargin;
+            document.getElementById('margin-individual').style.display = useIndividualMargin ? 'block' : 'none';
+            controls.marginAll.parentElement.style.display = useIndividualMargin ? 'none' : 'flex';
+            updateBox();
+        });
+
+        document.getElementById('toggle-radius').addEventListener('click', () => {
+            useIndividualRadius = !useIndividualRadius;
+            document.getElementById('radius-individual').style.display = useIndividualRadius ? 'block' : 'none';
+            controls.borderRadiusAll.parentElement.style.display = useIndividualRadius ? 'none' : 'flex';
+            updateBox();
+        });
+
+        // Update function
+        function updateBox() {
+            // Get values
+            const padding = useIndividualPadding 
+                ? `${controls.paddingTop.value}px ${controls.paddingRight.value}px ${controls.paddingBottom.value}px ${controls.paddingLeft.value}px`
+                : `${controls.paddingAll.value}px`;
+            
+            const margin = useIndividualMargin
+                ? `${controls.marginTop.value}px ${controls.marginRight.value}px ${controls.marginBottom.value}px ${controls.marginLeft.value}px`
+                : `${controls.marginAll.value}px`;
+            
+            const borderRadius = useIndividualRadius
+                ? `${controls.radiusTopLeft.value}px ${controls.radiusTopRight.value}px ${controls.radiusBottomRight.value}px ${controls.radiusBottomLeft.value}px`
+                : `${controls.borderRadiusAll.value}px`;
+
+            const border = `${controls.borderWidth.value}px ${controls.borderStyle.value} ${controls.borderColor.value}`;
+            
+            const shadowOpacity = controls.shadowOpacity.value / 100;
+            const shadowColorRgb = hexToRgb(controls.shadowColor.value);
+            const boxShadow = `${controls.shadowX.value}px ${controls.shadowY.value}px ${controls.shadowBlur.value}px ${controls.shadowSpread.value}px rgba(${shadowColorRgb.r}, ${shadowColorRgb.g}, ${shadowColorRgb.b}, ${shadowOpacity})`;
+
+            // Apply styles
+            styledBox.style.width = controls.boxWidth.value + 'px';
+            styledBox.style.height = controls.boxHeight.value + 'px';
+            styledBox.style.backgroundColor = controls.bgColor.value;
+            styledBox.style.padding = padding;
+            styledBox.style.margin = margin;
+            styledBox.style.border = border;
+            styledBox.style.borderRadius = borderRadius;
+            styledBox.style.boxShadow = boxShadow;
+
+            // Update CSS code display
+            const cssText = `.styled-box {
+  width: ${controls.boxWidth.value}px;
+  height: ${controls.boxHeight.value}px;
+  background-color: ${controls.bgColor.value};
+  
+  padding: ${padding};
+  border: ${border};
+  margin: ${margin};
+  border-radius: ${borderRadius};
+  box-shadow: ${boxShadow};
+}`;
+            cssCode.textContent = cssText;
+
+            // Update value displays
+            updateValueDisplays();
+        }
+
+        function updateValueDisplays() {
+            document.getElementById('padding-value').textContent = controls.paddingAll.value + 'px';
+            document.getElementById('padding-top-value').textContent = controls.paddingTop.value + 'px';
+            document.getElementById('padding-right-value').textContent = controls.paddingRight.value + 'px';
+            document.getElementById('padding-bottom-value').textContent = controls.paddingBottom.value + 'px';
+            document.getElementById('padding-left-value').textContent = controls.paddingLeft.value + 'px';
+            
+            document.getElementById('margin-value').textContent = controls.marginAll.value + 'px';
+            document.getElementById('margin-top-value').textContent = controls.marginTop.value + 'px';
+            document.getElementById('margin-right-value').textContent = controls.marginRight.value + 'px';
+            document.getElementById('margin-bottom-value').textContent = controls.marginBottom.value + 'px';
+            document.getElementById('margin-left-value').textContent = controls.marginLeft.value + 'px';
+            
+            document.getElementById('border-width-value').textContent = controls.borderWidth.value + 'px';
+            document.getElementById('border-color-value').textContent = controls.borderColor.value;
+            
+            document.getElementById('border-radius-value').textContent = controls.borderRadiusAll.value + 'px';
+            document.getElementById('radius-top-left-value').textContent = controls.radiusTopLeft.value + 'px';
+            document.getElementById('radius-top-right-value').textContent = controls.radiusTopRight.value + 'px';
+            document.getElementById('radius-bottom-right-value').textContent = controls.radiusBottomRight.value + 'px';
+            document.getElementById('radius-bottom-left-value').textContent = controls.radiusBottomLeft.value + 'px';
+            
+            document.getElementById('shadow-x-value').textContent = controls.shadowX.value + 'px';
+            document.getElementById('shadow-y-value').textContent = controls.shadowY.value + 'px';
+            document.getElementById('shadow-blur-value').textContent = controls.shadowBlur.value + 'px';
+            document.getElementById('shadow-spread-value').textContent = controls.shadowSpread.value + 'px';
+            document.getElementById('shadow-color-value').textContent = controls.shadowColor.value;
+            document.getElementById('shadow-opacity-value').textContent = (controls.shadowOpacity.value / 100).toFixed(1);
+            
+            document.getElementById('bg-color-value').textContent = controls.bgColor.value;
+            document.getElementById('box-width-value').textContent = controls.boxWidth.value + 'px';
+            document.getElementById('box-height-value').textContent = controls.boxHeight.value + 'px';
+        }
+
+        // Helper function to convert hex to RGB
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : { r: 0, g: 0, b: 0 };
+        }
+
+        // Add event listeners to all controls
+        Object.values(controls).forEach(control => {
+            control.addEventListener('input', updateBox);
+        });
+
+        // Copy CSS button
+        document.getElementById('copy-css').addEventListener('click', () => {
+            navigator.clipboard.writeText(cssCode.textContent);
+            const btn = document.getElementById('copy-css');
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => {
+                btn.textContent = '📋 Copy CSS';
+            }, 2000);
+        });
+
+        // Preset styles
+        const presets = {
+            card: {
+                padding: 24, border: 1, borderStyle: 'solid', borderColor: '#e0e0e0',
+                margin: 20, borderRadius: 12, shadowX: 0, shadowY: 4, shadowBlur: 12,
+                shadowSpread: 0, shadowOpacity: 15, bgColor: '#ffffff', width: 320, height: 180
+            },
+            button: {
+                padding: 12, border: 0, borderStyle: 'solid', borderColor: '#3498db',
+                margin: 10, borderRadius: 6, shadowX: 0, shadowY: 2, shadowBlur: 4,
+                shadowSpread: 0, shadowOpacity: 20, bgColor: '#3498db', width: 200, height: 50
+            },
+            elevated: {
+                padding: 30, border: 0, borderStyle: 'solid', borderColor: '#cccccc',
+                margin: 30, borderRadius: 16, shadowX: 0, shadowY: 12, shadowBlur: 24,
+                shadowSpread: 0, shadowOpacity: 25, bgColor: '#ffffff', width: 320, height: 200
+            },
+            flat: {
+                padding: 20, border: 2, borderStyle: 'solid', borderColor: '#95a5a6',
+                margin: 15, borderRadius: 0, shadowX: 0, shadowY: 0, shadowBlur: 0,
+                shadowSpread: 0, shadowOpacity: 0, bgColor: '#ecf0f1', width: 300, height: 150
+            },
+            rounded: {
+                padding: 15, border: 2, borderStyle: 'solid', borderColor: '#2ecc71',
+                margin: 20, borderRadius: 50, shadowX: 0, shadowY: 4, shadowBlur: 8,
+                shadowSpread: 0, shadowOpacity: 15, bgColor: '#2ecc71', width: 250, height: 100
+            },
+            sharp: {
+                padding: 20, border: 3, borderStyle: 'solid', borderColor: '#e74c3c',
+                margin: 20, borderRadius: 0, shadowX: 5, shadowY: 5, shadowBlur: 0,
+                shadowSpread: 0, shadowOpacity: 40, bgColor: '#ffffff', width: 280, height: 160
+            },
+            glow: {
+                padding: 25, border: 2, borderStyle: 'solid', borderColor: '#9b59b6',
+                margin: 30, borderRadius: 10, shadowX: 0, shadowY: 0, shadowBlur: 20,
+                shadowSpread: 5, shadowOpacity: 40, bgColor: '#ffffff', width: 300, height: 180
+            },
+            inset: {
+                padding: 20, border: 1, borderStyle: 'solid', borderColor: '#bdc3c7',
+                margin: 20, borderRadius: 8, shadowX: 0, shadowY: 2, shadowBlur: 6,
+                shadowSpread: 0, shadowOpacity: 30, bgColor: '#ecf0f1', width: 300, height: 150
+            }
+        };
+
+        document.querySelectorAll('.preset-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const preset = presets[btn.dataset.preset];
+                if (preset) {
+                    controls.paddingAll.value = preset.padding;
+                    controls.borderWidth.value = preset.border;
+                    controls.borderStyle.value = preset.borderStyle;
+                    controls.borderColor.value = preset.borderColor;
+                    controls.marginAll.value = preset.margin;
+                    controls.borderRadiusAll.value = preset.borderRadius;
+                    controls.shadowX.value = preset.shadowX;
+                    controls.shadowY.value = preset.shadowY;
+                    controls.shadowBlur.value = preset.shadowBlur;
+                    controls.shadowSpread.value = preset.shadowSpread;
+                    controls.shadowOpacity.value = preset.shadowOpacity;
+                    controls.bgColor.value = preset.bgColor;
+                    controls.boxWidth.value = preset.width;
+                    controls.boxHeight.value = preset.height;
+                    
+                    // Reset to unified controls
+                    useIndividualPadding = false;
+                    useIndividualMargin = false;
+                    useIndividualRadius = false;
+                    
+                    updateBox();
+                }
+            });
+        });
+
+        // Reset button
+        document.getElementById('reset-all').addEventListener('click', () => {
+            controls.paddingAll.value = 20;
+            controls.borderWidth.value = 2;
+            controls.borderStyle.value = 'solid';
+            controls.borderColor.value = '#3498db';
+            controls.marginAll.value = 20;
+            controls.borderRadiusAll.value = 8;
+            controls.shadowX.value = 0;
+            controls.shadowY.value = 4;
+            controls.shadowBlur.value = 8;
+            controls.shadowSpread.value = 0;
+            controls.shadowOpacity.value = 20;
+            controls.shadowColor.value = '#000000';
+            controls.bgColor.value = '#f0f8ff';
+            controls.boxWidth.value = 300;
+            controls.boxHeight.value = 150;
+            
+            useIndividualPadding = false;
+            useIndividualMargin = false;
+            useIndividualRadius = false;
+            
+            updateBox();
+        });
+
+        // Initialize with individual padding controls hidden
+        const individualPaddingControls = document.querySelectorAll('#padding-top, #padding-right, #padding-bottom, #padding-left');
+        individualPaddingControls.forEach(ctrl => {
+            ctrl.parentElement.style.display = 'none';
+        });
+
+        // Initial render
+        updateBox();
+    </script>
+</body>
+</html>
