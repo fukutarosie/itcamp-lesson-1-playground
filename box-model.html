@@ -127,6 +127,88 @@
                 </div>
             </div>
         </div>
+
+        <!-- Box-Sizing Comparison Section -->
+        <div class="card full-width-card">
+            <h2>📏 box-sizing: content-box vs border-box</h2>
+            <p class="section-description">Understanding how <code>box-sizing</code> affects element dimensions</p>
+
+            <div class="comparison-grid">
+                <!-- Content Box -->
+                <div class="comparison-item">
+                    <h3 class="comparison-title">
+                        <span class="badge content-box-badge">content-box (default)</span>
+                    </h3>
+                    <p class="comparison-description">Width/height applies <strong>only to content</strong>. Padding and border are added on top.</p>
+                    
+                    <div class="box-demo-container">
+                        <div class="demo-box content-box-demo" id="contentBoxDemo">
+                            <span>Content Area</span>
+                        </div>
+                        <div class="dimension-label">Actual Total Width: <span id="contentBoxTotal">260px</span></div>
+                    </div>
+
+                    <div class="code-display small-code">
+<span class="code-property">box-sizing</span>: <span class="code-value">content-box</span>;
+<span class="code-property">width</span>: <span class="code-value" id="cbWidth">200px</span>;
+<span class="code-property">padding</span>: <span class="code-value" id="cbPadding">20px</span>;
+<span class="code-property">border</span>: <span class="code-value" id="cbBorder">10px</span> solid;
+
+<span class="code-comment">/* Total width = 200 + 20×2 + 10×2 = 260px */</span>
+                    </div>
+                </div>
+
+                <!-- Border Box -->
+                <div class="comparison-item">
+                    <h3 class="comparison-title">
+                        <span class="badge border-box-badge">border-box (recommended)</span>
+                    </h3>
+                    <p class="comparison-description">Width/height <strong>includes padding and border</strong>. Element stays at specified size.</p>
+                    
+                    <div class="box-demo-container">
+                        <div class="demo-box border-box-demo" id="borderBoxDemo">
+                            <span>Content Area</span>
+                        </div>
+                        <div class="dimension-label">Actual Total Width: <span id="borderBoxTotal">200px</span></div>
+                    </div>
+
+                    <div class="code-display small-code">
+<span class="code-property">box-sizing</span>: <span class="code-value">border-box</span>;
+<span class="code-property">width</span>: <span class="code-value" id="bbWidth">200px</span>;
+<span class="code-property">padding</span>: <span class="code-value" id="bbPadding">20px</span>;
+<span class="code-property">border</span>: <span class="code-value" id="bbBorder">10px</span> solid;
+
+<span class="code-comment">/* Total width = 200px (fixed!) */</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Controls -->
+            <div class="box-sizing-controls">
+                <h3>🎛️ Adjust Properties</h3>
+                <div class="controls-row">
+                    <div class="control-item">
+                        <label>Width: <span class="value-badge" id="widthDisplay">200px</span></label>
+                        <input type="range" id="widthSlider" min="150" max="300" value="200">
+                    </div>
+                    <div class="control-item">
+                        <label>Padding: <span class="value-badge" id="paddingDisplay">20px</span></label>
+                        <input type="range" id="paddingSlider" min="0" max="50" value="20">
+                    </div>
+                    <div class="control-item">
+                        <label>Border: <span class="value-badge" id="borderDisplay">10px</span></label>
+                        <input type="range" id="borderSlider" min="0" max="30" value="10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>🎯 Key Difference:</strong><br>
+                • <strong>content-box:</strong> Width = content only. Padding & border add extra space (harder to predict final size).<br>
+                • <strong>border-box:</strong> Width = content + padding + border. Final size matches your width value (easier layout control).<br><br>
+                <strong>💡 Best Practice:</strong> Use <code>box-sizing: border-box;</code> for all elements – it makes sizing predictable!
+            </div>
+        </div>
     </div>
 
     <script>
@@ -221,6 +303,63 @@
         contentRange.addEventListener('input', updateBoxModel);
 
         updateBoxModel();
+
+        // Box-sizing comparison functionality
+        const widthSlider = document.getElementById('widthSlider');
+        const paddingSlider = document.getElementById('paddingSlider');
+        const borderSlider = document.getElementById('borderSlider');
+        
+        const widthDisplay = document.getElementById('widthDisplay');
+        const paddingDisplay = document.getElementById('paddingDisplay');
+        const borderDisplay = document.getElementById('borderDisplay');
+        
+        const contentBoxDemo = document.getElementById('contentBoxDemo');
+        const borderBoxDemo = document.getElementById('borderBoxDemo');
+        
+        const contentBoxTotal = document.getElementById('contentBoxTotal');
+        const borderBoxTotal = document.getElementById('borderBoxTotal');
+
+        function updateBoxSizing() {
+            const width = widthSlider.value;
+            const padding = paddingSlider.value;
+            const border = borderSlider.value;
+
+            // Update display values
+            widthDisplay.textContent = width + 'px';
+            paddingDisplay.textContent = padding + 'px';
+            borderDisplay.textContent = border + 'px';
+
+            // Apply styles to both boxes
+            contentBoxDemo.style.width = width + 'px';
+            contentBoxDemo.style.padding = padding + 'px';
+            contentBoxDemo.style.borderWidth = border + 'px';
+
+            borderBoxDemo.style.width = width + 'px';
+            borderBoxDemo.style.padding = padding + 'px';
+            borderBoxDemo.style.borderWidth = border + 'px';
+
+            // Calculate total widths
+            const contentBoxTotalWidth = parseInt(width) + (parseInt(padding) * 2) + (parseInt(border) * 2);
+            const borderBoxTotalWidth = parseInt(width);
+
+            contentBoxTotal.textContent = contentBoxTotalWidth + 'px';
+            borderBoxTotal.textContent = borderBoxTotalWidth + 'px';
+
+            // Update code displays
+            document.getElementById('cbWidth').textContent = width + 'px';
+            document.getElementById('cbPadding').textContent = padding + 'px';
+            document.getElementById('cbBorder').textContent = border + 'px';
+
+            document.getElementById('bbWidth').textContent = width + 'px';
+            document.getElementById('bbPadding').textContent = padding + 'px';
+            document.getElementById('bbBorder').textContent = border + 'px';
+        }
+
+        widthSlider.addEventListener('input', updateBoxSizing);
+        paddingSlider.addEventListener('input', updateBoxSizing);
+        borderSlider.addEventListener('input', updateBoxSizing);
+
+        updateBoxSizing();
     </script>
 </body>
 </html>

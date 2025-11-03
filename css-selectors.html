@@ -3,411 +3,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio UI Preview - How It Looks</title>
-    <link rel="stylesheet" href="styles/css-selectors.css">
-</head>
-<body>
-    <div class="container">
-        <a href="index.html" class="back-button">← Back to Home</a>
-        <h1 class="page-title">🎯 CSS Selectors Playground</h1>
-        <p class="subtitle">Learn how CSS selectors filter and style your HTML elements!</p>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio UI Preview - How It Looks</title>
+        <link rel="stylesheet" href="styles/css-selectors.css">
+    </head>
+    <body>
+        <div class="container">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1 class="page-title">🎯 CSS Selectors Playground</h1>
+            <p class="subtitle">Learn how CSS selectors filter and style your HTML elements!</p>
 
-        <div class="info-box">
-            <h3>🎯 Understanding the Connection</h3>
-            <ul>
-                <li><strong>Filter Funnel:</strong> Shows how selectors filter HTML elements</li>
-                <li><strong>Code Panel:</strong> The HTML source code you write</li>
-                <li><strong>UI Panel:</strong> How the browser renders it visually</li>
-                <li>Click the buttons below to see all three update simultaneously!</li>
-            </ul>
-        </div>
+            <div class="info-box">
+                <h3>🎯 Understanding the Connection</h3>
+                <ul>
+                    <li><strong>Filter Funnel:</strong> Shows how selectors filter HTML elements</li>
+                    <li><strong>Code Panel:</strong> The HTML source code you write</li>
+                    <li><strong>UI Panel:</strong> How the browser renders it visually</li>
+                    <li>Click the buttons below to see all three update simultaneously!</li>
+                </ul>
+            </div>
 
-        <div class="toggle-buttons">
-            <button class="toggle-btn" onclick="highlightElements(event)">🏷️ Element Selector (p)</button>
-            <button class="toggle-btn" onclick="highlightClasses(event)">📦 Class Selector (.project-card)</button>
-            <button class="toggle-btn" onclick="highlightId(event)">🆔 ID Selector (#main-header)</button>
-            <button class="toggle-btn" onclick="clearHighlights(event)">❌ Clear All</button>
-        </div>
+            <div class="toggle-buttons">
+                <button class="toggle-btn" onclick="highlightElements(event)">🏷️ Element Selector (p)</button>
+                <button class="toggle-btn" onclick="highlightClasses(event)">📦 Class Selector (.project-card)</button>
+                <button class="toggle-btn" onclick="highlightId(event)">🆔 ID Selector (#main-header)</button>
+                <button class="toggle-btn" onclick="clearHighlights(event)">❌ Clear All</button>
+            </div>
 
-        <!-- FILTER FUNNEL VISUALIZATION -->
-        <div class="filter-section">
-            <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔍 The Filter System in Action</h2>
-            <div class="filter-flow">
-                <div class="filter-stage">
-                    <div class="stage-label">📄 HTML Elements</div>
-                    <div class="elements-container" id="inputElements">
-                        <div class="mini-element" data-type="header">&lt;header&gt;</div>
-                        <div class="mini-element" data-type="h1">&lt;h1&gt;</div>
-                        <div class="mini-element" data-type="p">&lt;p&gt;</div>
-                        <div class="mini-element" data-type="section">&lt;section&gt;</div>
-                        <div class="mini-element" data-type="h2">&lt;h2&gt;</div>
-                        <div class="mini-element" data-type="p">&lt;p&gt;</div>
-                        <div class="mini-element" data-type="p">&lt;p&gt;</div>
-                        <div class="mini-element" data-type="div-class">.project-card</div>
-                        <div class="mini-element" data-type="h3">&lt;h3&gt;</div>
-                        <div class="mini-element" data-type="p">&lt;p&gt;</div>
-                        <div class="mini-element" data-type="div-class">.project-card</div>
-                        <div class="mini-element" data-type="h3">&lt;h3&gt;</div>
-                        <div class="mini-element" data-type="p">&lt;p&gt;</div>
-                        <div class="mini-element" data-type="footer">&lt;footer&gt;</div>
-                        <div class="mini-element" data-type="p">&lt;p&gt;</div>
+            <!-- FILTER FUNNEL VISUALIZATION -->
+            <div class="filter-section">
+                <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔍 The Filter System in Action</h2>
+                <div class="filter-flow">
+                    <div class="filter-stage">
+                        <div class="stage-label">📄 HTML Elements</div>
+                        <div class="elements-container" id="inputElements">
+                            <div class="mini-element" data-type="header">&lt;header&gt;</div>
+                            <div class="mini-element" data-type="h1">&lt;h1&gt;</div>
+                            <div class="mini-element" data-type="p">&lt;p&gt;</div>
+                            <div class="mini-element" data-type="section">&lt;section&gt;</div>
+                            <div class="mini-element" data-type="h2">&lt;h2&gt;</div>
+                            <div class="mini-element" data-type="p">&lt;p&gt;</div>
+                            <div class="mini-element" data-type="p">&lt;p&gt;</div>
+                            <div class="mini-element" data-type="div-class">.project-card</div>
+                            <div class="mini-element" data-type="h3">&lt;h3&gt;</div>
+                            <div class="mini-element" data-type="p">&lt;p&gt;</div>
+                            <div class="mini-element" data-type="div-class">.project-card</div>
+                            <div class="mini-element" data-type="h3">&lt;h3&gt;</div>
+                            <div class="mini-element" data-type="p">&lt;p&gt;</div>
+                            <div class="mini-element" data-type="footer">&lt;footer&gt;</div>
+                            <div class="mini-element" data-type="p">&lt;p&gt;</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="filter-arrow">→</div>
+                    <div class="filter-arrow">→</div>
 
-                <div class="filter-stage filter-funnel-stage">
-                    <div class="stage-label">🔍 CSS Selector</div>
-                    <div class="funnel-visual">
-                        <div class="funnel-top" id="funnelSelector">?</div>
-                        <div class="funnel-middle">
-                            <div class="funnel-properties" id="funnelProps">
-                                Click a button to activate
+                    <div class="filter-stage filter-funnel-stage">
+                        <div class="stage-label">🔍 CSS Selector</div>
+                        <div class="funnel-visual">
+                            <div class="funnel-top" id="funnelSelector">?</div>
+                            <div class="funnel-middle">
+                                <div class="funnel-properties" id="funnelProps">
+                                    Click a button to activate
+                                </div>
                             </div>
+                            <div class="funnel-bottom"></div>
                         </div>
-                        <div class="funnel-bottom"></div>
+                        <div class="filter-message" id="filterMsg">Waiting for selection...</div>
                     </div>
-                    <div class="filter-message" id="filterMsg">Waiting for selection...</div>
+
+                    <div class="filter-arrow">→</div>
+
+                    <div class="filter-stage">
+                        <div class="stage-label">✅ Matched Elements</div>
+                        <div class="elements-container" id="outputElements">
+                            <div class="waiting-message">Click a button to see matches!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-explanation" id="filterExplanation">
+                    💡 Select a selector type to see the filter in action!
+                </div>
+            </div>
+
+            <!-- SECTION CAPTION -->
+            <div style="text-align: center; margin: 40px 0 30px 0;">
+                <h2 style="color: white; font-size: 36px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                    📄 Source Code & Browser Rendering
+                </h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 18px;">
+                    See the connection between HTML code and visual output!
+                </p>
+            </div>
+
+            <div class="comparison-layout">
+                <!-- HTML Code Panel -->
+                <div class="panel">
+                    <h2>📝 HTML Code (What You Write)</h2>
+                    <div class="code-panel">
+                        <div class="code-line">&lt;!DOCTYPE html&gt;</div>
+                        <div class="code-line">&lt;html&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&lt;head&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Portfolio&lt;/title&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&lt;/head&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&lt;body&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">header</span> <span class="code-attr" id="code-id">id="main-header"</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">h1</span>&gt;John Doe&lt;/<span class="code-tag">h1</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p1">p</span>&gt;Web Developer&lt;/<span class="code-tag">p</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">header</span>&gt;</div>
+                        <div class="code-line"></div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">section</span> <span class="code-attr">class="about"</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">h2</span>&gt;About Me&lt;/<span class="code-tag">h2</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p2">p</span>&gt;I'm a passionate developer...&lt;/<span class="code-tag">p</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p3">p</span>&gt;I love building websites.&lt;/<span class="code-tag">p</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">section</span>&gt;</div>
+                        <div class="code-line"></div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">section</span> <span class="code-attr">class="projects"</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">h2</span>&gt;My Projects&lt;/<span class="code-tag">h2</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">div</span> <span class="code-attr" id="code-class1">class="project-card"</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">h3</span>&gt;Portfolio Website&lt;/<span class="code-tag">h3</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p4">p</span>&gt;A personal portfolio site&lt;/<span class="code-tag">p</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">div</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">div</span> <span class="code-attr" id="code-class2">class="project-card"</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">h3</span>&gt;E-commerce Site&lt;/<span class="code-tag">h3</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p5">p</span>&gt;Online shopping platform&lt;/<span class="code-tag">p</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">div</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">section</span>&gt;</div>
+                        <div class="code-line"></div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">footer</span> <span class="code-attr">id="main-footer"</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p6">p</span>&gt;&copy; 2024 John Doe&lt;/<span class="code-tag">p</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">footer</span>&gt;</div>
+                        <div class="code-line">&nbsp;&nbsp;&lt;/body&gt;</div>
+                        <div class="code-line">&lt;/html&gt;</div>
+                    </div>
                 </div>
 
-                <div class="filter-arrow">→</div>
+                <!-- Rendered Preview Panel -->
+                <div class="panel portfolio-preview">
+                    <h2>🖥️ Browser Renders This (What You See)</h2>
+                    <div class="portfolio-content">
+                        <header id="rendered-header">
+                            <h1>John Doe</h1>
+                            <p id="rendered-p1">Web Developer</p>
+                        </header>
 
-                <div class="filter-stage">
-                    <div class="stage-label">✅ Matched Elements</div>
-                    <div class="elements-container" id="outputElements">
-                        <div class="waiting-message">Click a button to see matches!</div>
+                        <section class="about">
+                            <h2>About Me</h2>
+                            <p id="rendered-p2">I'm a passionate developer...</p>
+                            <p id="rendered-p3">I love building websites.</p>
+                        </section>
+
+                        <section class="projects">
+                            <h2>My Projects</h2>
+                            <div class="project-card" id="rendered-card1">
+                                <h3>Portfolio Website</h3>
+                                <p id="rendered-p4">A personal portfolio site</p>
+                            </div>
+                            <div class="project-card" id="rendered-card2">
+                                <h3>E-commerce Site</h3>
+                                <p id="rendered-p5">Online shopping platform</p>
+                            </div>
+                        </section>
+
+                        <footer>
+                            <p id="rendered-p6">© 2024 John Doe</p>
+                        </footer>
                     </div>
                 </div>
             </div>
-            <div class="filter-explanation" id="filterExplanation">
-                💡 Select a selector type to see the filter in action!
+
+            <!-- Annotations -->
+            <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="annotation">
+                    <div class="annotation-label">Element Selector (p)</div>
+                    <div class="annotation-text">
+                        Targets ALL 6 &lt;p&gt; tags:<br>
+                        • "Web Developer"<br>
+                        • About section (2 paragraphs)<br>
+                        • Project descriptions (2)<br>
+                        • Footer copyright
+                    </div>
+                    <div class="info-box" style="margin-top:12px;">
+                        <h4>Quick tip</h4>
+                        <p><strong>Example:</strong> <code>p { color: white; }</code></p>
+                        <p>This selector matches <strong>6</strong> elements in the demo. Use element selectors for broad styling.</p>
+                    </div>
+                </div>
+
+                <div class="annotation">
+                    <div class="annotation-label">Class Selector (.project-card)</div>
+                    <div class="annotation-text">
+                        Targets 2 elements with class="project-card":<br>
+                        • Portfolio Website card<br>
+                        • E-commerce Site card<br>
+                        Both get the same styling!
+                    </div>
+                    <div class="info-box" style="margin-top:12px;">
+                        <h4>Quick tip</h4>
+                        <p><strong>Example:</strong> <code>.project-card { padding: 30px; }</code></p>
+                        <p>This selector matches <strong>2</strong> elements in the demo. Classes are reusable across many elements.</p>
+                    </div>
+                </div>
+
+                <div class="annotation">
+                    <div class="annotation-label">ID Selector (#main-header)</div>
+                    <div class="annotation-text">
+                        Targets 1 unique element:<br>
+                        • The purple header section<br>
+                        Only ONE element can have this ID per page!
+                    </div>
+                    <div class="info-box" style="margin-top:12px;">
+                        <h4>Quick tip</h4>
+                        <p><strong>Example:</strong> <code>#main-header { background: purple; }</code></p>
+                        <p>IDs are unique — this matches <strong>1</strong> element. Use IDs for single, unique components.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 30px;">
+                <h3>💡 Key Insights</h3>
+                <ul>
+                    <li><strong>Left side (Code):</strong> Raw HTML - what developers write</li>
+                    <li><strong>Right side (UI):</strong> Rendered result - what users see</li>
+                    <li><strong>CSS Selectors target the code:</strong> But affect the visual UI</li>
+                    <li><strong>p { color: blue; }</strong> would make all 6 paragraphs blue in the UI</li>
+                    <li><strong>.project-card { }</strong> would style both project cards</li>
+                    <li><strong>#main-header { }</strong> would only style the top purple section</li>
+                </ul>
             </div>
         </div>
 
-        <!-- SECTION CAPTION -->
-        <div style="text-align: center; margin: 40px 0 30px 0;">
-            <h2 style="color: white; font-size: 36px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-                📄 Source Code & Browser Rendering
-            </h2>
-            <p style="color: rgba(255,255,255,0.9); font-size: 18px;">
-                See the connection between HTML code and visual output!
-            </p>
-        </div>
-
-        <div class="comparison-layout">
-            <!-- HTML Code Panel -->
-            <div class="panel">
-                <h2>📝 HTML Code (What You Write)</h2>
-                <div class="code-panel">
-                    <div class="code-line">&lt;!DOCTYPE html&gt;</div>
-                    <div class="code-line">&lt;html&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&lt;head&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Portfolio&lt;/title&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&lt;/head&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&lt;body&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">header</span> <span class="code-attr" id="code-id">id="main-header"</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">h1</span>&gt;John Doe&lt;/<span class="code-tag">h1</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p1">p</span>&gt;Web Developer&lt;/<span class="code-tag">p</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">header</span>&gt;</div>
-                    <div class="code-line"></div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">section</span> <span class="code-attr">class="about"</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">h2</span>&gt;About Me&lt;/<span class="code-tag">h2</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p2">p</span>&gt;I'm a passionate developer...&lt;/<span class="code-tag">p</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p3">p</span>&gt;I love building websites.&lt;/<span class="code-tag">p</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">section</span>&gt;</div>
-                    <div class="code-line"></div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">section</span> <span class="code-attr">class="projects"</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">h2</span>&gt;My Projects&lt;/<span class="code-tag">h2</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">div</span> <span class="code-attr" id="code-class1">class="project-card"</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">h3</span>&gt;Portfolio Website&lt;/<span class="code-tag">h3</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p4">p</span>&gt;A personal portfolio site&lt;/<span class="code-tag">p</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">div</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">div</span> <span class="code-attr" id="code-class2">class="project-card"</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">h3</span>&gt;E-commerce Site&lt;/<span class="code-tag">h3</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p5">p</span>&gt;Online shopping platform&lt;/<span class="code-tag">p</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">div</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">section</span>&gt;</div>
-                    <div class="code-line"></div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag">footer</span> <span class="code-attr">id="main-footer"</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="code-tag" id="code-p6">p</span>&gt;&copy; 2024 John Doe&lt;/<span class="code-tag">p</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="code-tag">footer</span>&gt;</div>
-                    <div class="code-line">&nbsp;&nbsp;&lt;/body&gt;</div>
-                    <div class="code-line">&lt;/html&gt;</div>
-                </div>
-            </div>
-
-            <!-- Rendered Preview Panel -->
-            <div class="panel portfolio-preview">
-                <h2>🖥️ Browser Renders This (What You See)</h2>
-                <div class="portfolio-content">
-                    <header id="rendered-header">
-                        <h1>John Doe</h1>
-                        <p id="rendered-p1">Web Developer</p>
-                    </header>
-
-                    <section class="about">
-                        <h2>About Me</h2>
-                        <p id="rendered-p2">I'm a passionate developer...</p>
-                        <p id="rendered-p3">I love building websites.</p>
-                    </section>
-
-                    <section class="projects">
-                        <h2>My Projects</h2>
-                        <div class="project-card" id="rendered-card1">
-                            <h3>Portfolio Website</h3>
-                            <p id="rendered-p4">A personal portfolio site</p>
-                        </div>
-                        <div class="project-card" id="rendered-card2">
-                            <h3>E-commerce Site</h3>
-                            <p id="rendered-p5">Online shopping platform</p>
-                        </div>
-                    </section>
-
-                    <footer>
-                        <p id="rendered-p6">© 2024 John Doe</p>
-                    </footer>
-                </div>
-            </div>
-        </div>
-
-        <!-- Annotations -->
-        <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <div class="annotation">
-                <div class="annotation-label">Element Selector (p)</div>
-                <div class="annotation-text">
-                    Targets ALL 6 &lt;p&gt; tags:<br>
-                    • "Web Developer"<br>
-                    • About section (2 paragraphs)<br>
-                    • Project descriptions (2)<br>
-                    • Footer copyright
-                </div>
-                <div class="info-box" style="margin-top:12px;">
-                    <h4>Quick tip</h4>
-                    <p><strong>Example:</strong> <code>p { color: white; }</code></p>
-                    <p>This selector matches <strong>6</strong> elements in the demo. Use element selectors for broad styling.</p>
-                </div>
-            </div>
-
-            <div class="annotation">
-                <div class="annotation-label">Class Selector (.project-card)</div>
-                <div class="annotation-text">
-                    Targets 2 elements with class="project-card":<br>
-                    • Portfolio Website card<br>
-                    • E-commerce Site card<br>
-                    Both get the same styling!
-                </div>
-                <div class="info-box" style="margin-top:12px;">
-                    <h4>Quick tip</h4>
-                    <p><strong>Example:</strong> <code>.project-card { padding: 30px; }</code></p>
-                    <p>This selector matches <strong>2</strong> elements in the demo. Classes are reusable across many elements.</p>
-                </div>
-            </div>
-
-            <div class="annotation">
-                <div class="annotation-label">ID Selector (#main-header)</div>
-                <div class="annotation-text">
-                    Targets 1 unique element:<br>
-                    • The purple header section<br>
-                    Only ONE element can have this ID per page!
-                </div>
-                <div class="info-box" style="margin-top:12px;">
-                    <h4>Quick tip</h4>
-                    <p><strong>Example:</strong> <code>#main-header { background: purple; }</code></p>
-                    <p>IDs are unique — this matches <strong>1</strong> element. Use IDs for single, unique components.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="info-box" style="margin-top: 30px;">
-            <h3>💡 Key Insights</h3>
-            <ul>
-                <li><strong>Left side (Code):</strong> Raw HTML - what developers write</li>
-                <li><strong>Right side (UI):</strong> Rendered result - what users see</li>
-                <li><strong>CSS Selectors target the code:</strong> But affect the visual UI</li>
-                <li><strong>p { color: blue; }</strong> would make all 6 paragraphs blue in the UI</li>
-                <li><strong>.project-card { }</strong> would style both project cards</li>
-                <li><strong>#main-header { }</strong> would only style the top purple section</li>
-            </ul>
-        </div>
-    </div>
-
-    <script>
-        function animateFilterFunnel(matchTypes, selectorText, cssProps, count) {
-            const inputElements = document.querySelectorAll('#inputElements .mini-element');
-            const outputContainer = document.getElementById('outputElements');
+        <script>
+            function animateFilterFunnel(matchTypes, selectorText, cssProps, count) {
+                const inputElements = document.querySelectorAll('#inputElements .mini-element');
+                const outputContainer = document.getElementById('outputElements');
             
-            // Update funnel display
-            document.getElementById('funnelSelector').textContent = selectorText;
-            document.getElementById('funnelProps').textContent = cssProps;
-            document.getElementById('filterMsg').textContent = `Filtering ${inputElements.length} elements...`;
+                // Update funnel display
+                document.getElementById('funnelSelector').textContent = selectorText;
+                document.getElementById('funnelProps').textContent = cssProps;
+                document.getElementById('filterMsg').textContent = `Filtering ${inputElements.length} elements...`;
             
-            // Reset all input elements
-            inputElements.forEach(el => {
-                el.classList.remove('matched', 'not-matched', 'filtering');
-            });
+                // Reset all input elements
+                inputElements.forEach(el => {
+                    el.classList.remove('matched', 'not-matched', 'filtering');
+                });
             
-            // Clear output
-            outputContainer.innerHTML = '';
+                // Clear output
+                outputContainer.innerHTML = '';
             
-            // Animate each input element
-            inputElements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.classList.add('filtering');
-                    
+                // Animate each input element
+                inputElements.forEach((el, index) => {
                     setTimeout(() => {
-                        el.classList.remove('filtering');
-                        const type = el.getAttribute('data-type');
+                        el.classList.add('filtering');
+                    
+                        setTimeout(() => {
+                            el.classList.remove('filtering');
+                            const type = el.getAttribute('data-type');
                         
-                        if (matchTypes.includes(type)) {
-                            el.classList.add('matched');
+                            if (matchTypes.includes(type)) {
+                                el.classList.add('matched');
                             
-                            // Add to output
-                            const outputEl = el.cloneNode(true);
-                            outputEl.classList.remove('filtering');
-                            outputContainer.appendChild(outputEl);
-                        } else {
-                            el.classList.add('not-matched');
-                        }
-                    }, 300);
-                }, index * 150);
-            });
+                                // Add to output
+                                const outputEl = el.cloneNode(true);
+                                outputEl.classList.remove('filtering');
+                                outputContainer.appendChild(outputEl);
+                            } else {
+                                el.classList.add('not-matched');
+                            }
+                        }, 300);
+                    }, index * 150);
+                });
             
-            // Update explanation after animation
-            setTimeout(() => {
-                document.getElementById('filterMsg').textContent = `✓ Found ${count} matches!`;
-            }, inputElements.length * 150 + 400);
-        }
-
-        function clearHighlights(event) {
-            if (event) event.target.classList.remove('active');
-            
-            // Clear code highlights
-            document.querySelectorAll('.code-tag, .code-attr').forEach(el => {
-                el.style.background = '';
-                el.style.boxShadow = '';
-            });
-
-            // Clear UI highlights
-            document.querySelectorAll('.portfolio-content *').forEach(el => {
-                el.classList.remove('element-highlight', 'class-highlight', 'id-highlight');
-            });
-
-            // Clear button states
-            document.querySelectorAll('.toggle-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Reset filter funnel
-            document.getElementById('funnelSelector').textContent = '?';
-            document.getElementById('funnelProps').textContent = 'Click a button to activate';
-            document.getElementById('filterMsg').textContent = 'Waiting for selection...';
-            document.getElementById('filterExplanation').innerHTML = '💡 Select a selector type to see the filter in action!';
-            
-            // Reset mini elements
-            document.querySelectorAll('#inputElements .mini-element').forEach(el => {
-                el.classList.remove('matched', 'not-matched', 'filtering');
-            });
-            
-            document.getElementById('outputElements').innerHTML = '<div class="waiting-message">Click a button to see matches!</div>';
-        }
-
-        function highlightElements(event) {
-            clearHighlights();
-            event.target.classList.add('active');
-
-            // Animate filter funnel
-            animateFilterFunnel(
-                ['p'], 
-                'p { }',
-                'color: blue; font-size: 18px;',
-                6
-            );
-
-            // Highlight in code
-            ['code-p1', 'code-p2', 'code-p3', 'code-p4', 'code-p5', 'code-p6'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    el.style.background = 'rgba(52, 152, 219, 0.3)';
-                    el.style.boxShadow = '0 0 10px rgba(52, 152, 219, 0.6)';
-                }
-            });
-
-            // Highlight in UI
-            ['rendered-p1', 'rendered-p2', 'rendered-p3', 'rendered-p4', 'rendered-p5', 'rendered-p6'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    el.classList.add('element-highlight');
-                }
-            });
-            
-            // Update explanation
-            document.getElementById('filterExplanation').innerHTML = 
-                '💡 <strong>Element selector "p"</strong> filtered all 15 HTML elements and found <strong>6 matches</strong> - all the &lt;p&gt; paragraph tags! They pass through the funnel and appear in the code (blue) and UI (blue outline).';
-        }
-
-        function highlightClasses(event) {
-            clearHighlights();
-            event.target.classList.add('active');
-
-            // Animate filter funnel
-            animateFilterFunnel(
-                ['div-class'], 
-                '.project-card { }',
-                'padding: 30px; border-radius: 12px;',
-                2
-            );
-
-            // Highlight in code
-            ['code-class1', 'code-class2'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    el.style.background = 'rgba(46, 204, 113, 0.3)';
-                    el.style.boxShadow = '0 0 10px rgba(46, 204, 113, 0.6)';
-                }
-            });
-
-            // Highlight in UI
-            ['rendered-card1', 'rendered-card2'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    el.classList.add('class-highlight');
-                }
-            });
-            
-            // Update explanation
-            document.getElementById('filterExplanation').innerHTML = 
-                '💡 <strong>Class selector ".project-card"</strong> filtered all 15 elements and found <strong>2 matches</strong> - only the divs with class="project-card"! Both cards get the same styling. Classes are reusable!';
-        }
-
-        function highlightId(event) {
-            clearHighlights();
-            event.target.classList.add('active');
-
-            // Animate filter funnel
-            animateFilterFunnel(
-                ['header'], 
-                '#main-header { }',
-                'background: purple; padding: 60px;',
-                1
-            );
-
-            // Highlight in code
-            const codeEl = document.getElementById('code-id');
-            if (codeEl) {
-                codeEl.style.background = 'rgba(231, 76, 60, 0.3)';
-                codeEl.style.boxShadow = '0 0 10px rgba(231, 76, 60, 0.6)';
+                // Update explanation after animation
+                setTimeout(() => {
+                    document.getElementById('filterMsg').textContent = `✓ Found ${count} matches!`;
+                }, inputElements.length * 150 + 400);
             }
 
-            // Highlight in UI
-            const uiEl = document.getElementById('rendered-header');
-            if (uiEl) {
-                uiEl.classList.add('id-highlight');
-            }
+            function clearHighlights(event) {
+                if (event) event.target.classList.remove('active');
             
-            // Update explanation
-            document.getElementById('filterExplanation').innerHTML = 
-                '💡 <strong>ID selector "#main-header"</strong> filtered all 15 elements and found <strong>1 match</strong> - only the ONE element with id="main-header"! IDs are unique per page, so only one element passes through.';
-        }
-    </script>
-</body>
-</html>
+                // Clear code highlights
+                document.querySelectorAll('.code-tag, .code-attr').forEach(el => {
+                    el.style.background = '';
+                    el.style.boxShadow = '';
+                });
+
+                // Clear UI highlights
+                document.querySelectorAll('.portfolio-content *').forEach(el => {
+                    el.classList.remove('element-highlight', 'class-highlight', 'id-highlight');
+                });
+
+                // Clear button states
+                document.querySelectorAll('.toggle-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+            
+                // Reset filter funnel
+                document.getElementById('funnelSelector').textContent = '?';
+                document.getElementById('funnelProps').textContent = 'Click a button to activate';
+                document.getElementById('filterMsg').textContent = 'Waiting for selection...';
+                document.getElementById('filterExplanation').innerHTML = '💡 Select a selector type to see the filter in action!';
+            
+                // Reset mini elements
+                document.querySelectorAll('#inputElements .mini-element').forEach(el => {
+                    el.classList.remove('matched', 'not-matched', 'filtering');
+                });
+            
+                document.getElementById('outputElements').innerHTML = '<div class="waiting-message">Click a button to see matches!</div>';
+            }
+
+            function highlightElements(event) {
+                clearHighlights();
+                event.target.classList.add('active');
+
+                // Animate filter funnel
+                animateFilterFunnel(
+                    ['p'], 
+                    'p { }',
+                    'color: blue; font-size: 18px;',
+                    6
+                );
+
+                // Highlight in code
+                ['code-p1', 'code-p2', 'code-p3', 'code-p4', 'code-p5', 'code-p6'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.style.background = 'rgba(52, 152, 219, 0.3)';
+                        el.style.boxShadow = '0 0 10px rgba(52, 152, 219, 0.6)';
+                    }
+                });
+
+                // Highlight in UI
+                ['rendered-p1', 'rendered-p2', 'rendered-p3', 'rendered-p4', 'rendered-p5', 'rendered-p6'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.classList.add('element-highlight');
+                    }
+                });
+            
+                // Update explanation
+                document.getElementById('filterExplanation').innerHTML = 
+                    '💡 <strong>Element selector "p"</strong> filtered all 15 HTML elements and found <strong>6 matches</strong> - all the &lt;p&gt; paragraph tags! They pass through the funnel and appear in the code (blue) and UI (blue outline).';
+            }
+
+            function highlightClasses(event) {
+                clearHighlights();
+                event.target.classList.add('active');
+
+                // Animate filter funnel
+                animateFilterFunnel(
+                    ['div-class'], 
+                    '.project-card { }',
+                    'padding: 30px; border-radius: 12px;',
+                    2
+                );
+
+                // Highlight in code
+                ['code-class1', 'code-class2'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.style.background = 'rgba(46, 204, 113, 0.3)';
+                        el.style.boxShadow = '0 0 10px rgba(46, 204, 113, 0.6)';
+                    }
+                });
+
+                // Highlight in UI
+                ['rendered-card1', 'rendered-card2'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.classList.add('class-highlight');
+                    }
+                });
+            
+                // Update explanation
+                document.getElementById('filterExplanation').innerHTML = 
+                    '💡 <strong>Class selector ".project-card"</strong> filtered all 15 elements and found <strong>2 matches</strong> - only the divs with class="project-card"! Both cards get the same styling. Classes are reusable!';
+            }
+
+            function highlightId(event) {
+                clearHighlights();
+                event.target.classList.add('active');
+
+                // Animate filter funnel
+                animateFilterFunnel(
+                    ['header'], 
+                    '#main-header { }',
+                    'background: purple; padding: 60px;',
+                    1
+                );
+
+                // Highlight in code
+                const codeEl = document.getElementById('code-id');
+                if (codeEl) {
+                    codeEl.style.background = 'rgba(231, 76, 60, 0.3)';
+                    codeEl.style.boxShadow = '0 0 10px rgba(231, 76, 60, 0.6)';
+                }
+
+                // Highlight in UI
+                const uiEl = document.getElementById('rendered-header');
+                if (uiEl) {
+                    uiEl.classList.add('id-highlight');
+                }
+            
+                // Update explanation
+                document.getElementById('filterExplanation').innerHTML = 
+                    '💡 <strong>ID selector "#main-header"</strong> filtered all 15 elements and found <strong>1 match</strong> - only the ONE element with id="main-header"! IDs are unique per page, so only one element passes through.';
+            }
+        </script>
+    </body>
+    </html>

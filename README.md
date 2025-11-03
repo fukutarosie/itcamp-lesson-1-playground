@@ -19,8 +19,10 @@ Alternatively, you can open any individual demo file directly in your browser.
 ```
 css-playground/
 │
-├── index.html                      # Navigation home page
+├── demo-assignment.html            # Navigation home page
+├── demo-assignment.css             # Styles for the home page
 ├── css-selectors.html              # CSS selector types demo
+├── css-specificity.html            # CSS specificity battle demo (NEW!)
 ├── css-declaration-methods.html    # Inline, internal, and external CSS demo
 ├── basic-styling-properties.html   # Fundamental CSS properties demo
 ├── box-model.html                  # CSS box model demonstration
@@ -49,7 +51,17 @@ Learn about different CSS selector types and how to target specific elements in 
 - Attribute selectors
 - Pseudo-classes and pseudo-elements
 
-### 2. CSS Declaration Methods
+### 2. CSS Specificity Battle ⚔️ NEW!
+Understand what happens when multiple CSS rules target the same element and learn which rule wins.
+
+**Topics covered:**
+- What is CSS specificity
+- Specificity calculation (Inline, ID, Class, Element)
+- Comparing different selector strengths
+- Real-world specificity conflicts
+- Best practices for managing specificity
+
+### 3. CSS Declaration Methods
 Explore the three main ways to declare CSS styles in your web pages.
 
 **Topics covered:**
@@ -57,7 +69,7 @@ Explore the three main ways to declare CSS styles in your web pages.
 - Internal CSS (using `<style>` tags)
 - External CSS (linking separate `.css` files)
 
-### 3. Basic Styling Properties
+### 4. Basic Styling Properties
 Discover fundamental CSS properties for styling your web pages.
 
 **Topics covered:**
@@ -66,7 +78,7 @@ Discover fundamental CSS properties for styling your web pages.
 - Text properties (text-align, text-decoration, line-height)
 - Basic visual effects
 
-### 4. Box Model
+### 5. Box Model
 Understand the CSS box model and how spacing works around elements.
 
 **Topics covered:**
@@ -76,7 +88,7 @@ Understand the CSS box model and how spacing works around elements.
 - Margin
 - Box-sizing property
 
-### 5. Display and Layout
+### 6. Display and Layout
 Master CSS display properties and modern layout techniques.
 
 **Topics covered:**
