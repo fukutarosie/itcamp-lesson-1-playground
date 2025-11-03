@@ -31,12 +31,13 @@
                 <button class="toggle-btn" onclick="highlightElements(event)">🏷️ Element Selector (p)</button>
                 <button class="toggle-btn" onclick="highlightClasses(event)">📦 Class Selector (.project-card)</button>
                 <button class="toggle-btn" onclick="highlightId(event)">🆔 ID Selector (#main-header)</button>
+                <button class="toggle-btn" onclick="highlightUniversal(event)">🌍 Universal Selector (*)</button>
                 <button class="toggle-btn" onclick="clearHighlights(event)">❌ Clear All</button>
             </div>
 
             <!-- FILTER FUNNEL VISUALIZATION -->
             <div class="filter-section">
-                <h2 style="color: white; text-align: center; margin-bottom: 20px;">🔍 The Filter System in Action</h2>
+                <h2 style="color: rgb(21, 21, 21); text-align: center; margin-bottom: 20px;">🔍 The Filter System in Action</h2>
                 <div class="filter-flow">
                     <div class="filter-stage">
                         <div class="stage-label">📄 HTML Elements</div>
@@ -412,6 +413,37 @@
                 // Update explanation
                 document.getElementById('filterExplanation').innerHTML = 
                     '💡 <strong>ID selector "#main-header"</strong> filtered all 15 elements and found <strong>1 match</strong> - only the ONE element with id="main-header"! IDs are unique per page, so only one element passes through.';
+            }
+
+            function highlightUniversal(event) {
+                clearHighlights();
+                event.target.classList.add('active');
+
+                // Get all element types for the filter animation
+                const allTypes = ['header', 'h1', 'p', 'section', 'h2', 'p', 'p', 'div-class', 'h3', 'p', 'div-class', 'h3', 'p', 'footer', 'p'];
+
+                // Animate filter funnel - all elements pass through
+                animateFilterFunnel(
+                    allTypes, 
+                    '* { }',
+                    'margin: 0; padding: 0;',
+                    15
+                );
+
+                // Highlight ALL elements in code
+                document.querySelectorAll('.code-tag').forEach(el => {
+                    el.style.background = 'rgba(155, 89, 182, 0.3)';
+                    el.style.boxShadow = '0 0 10px rgba(155, 89, 182, 0.6)';
+                });
+
+                // Highlight ALL elements in UI
+                document.querySelectorAll('.portfolio-content *').forEach(el => {
+                    el.classList.add('element-highlight');
+                });
+            
+                // Update explanation
+                document.getElementById('filterExplanation').innerHTML = 
+                    '💡 <strong>Universal selector "*"</strong> matches <strong>ALL 15 elements</strong> on the page! Every single HTML element passes through the funnel. Useful for CSS resets (like * { margin: 0; padding: 0; }) to remove default browser styles.';
             }
         </script>
     </body>
