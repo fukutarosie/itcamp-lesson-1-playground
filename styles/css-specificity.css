@@ -413,6 +413,7 @@ h1 {
     line-height: 1.6;
     overflow-x: auto;
     margin-bottom: 15px;
+    white-space: pre;
 }
 
 .html-tag {
@@ -441,6 +442,7 @@ h1 {
     line-height: 1.8;
     overflow-x: auto;
     margin-bottom: 15px;
+    white-space: pre;
 }
 
 .css-selector {
